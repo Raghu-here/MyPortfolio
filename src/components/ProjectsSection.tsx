@@ -68,7 +68,7 @@ const ProjectsSection = () => {
 
 const ProjectCard = ({ repo, index, languageColor }: { repo: Repo; index: number; languageColor: Record<string, string> }) => {
   const variants = ["scale-up", "fade-up", "zoom-in", "fade-left", "fade-right", "blur-in"] as const;
-  const card = useScrollReveal({ variant: variants[index % variants.length], delay: index * 100 });
+  const card = useScrollReveal<HTMLAnchorElement>({ variant: variants[index % variants.length], delay: index * 100 });
 
   return (
     <a
