@@ -117,12 +117,14 @@
 
 @layer base {
   * {
-    @apply border-border transition-colors duration-300;
+    @apply border-border;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    transition: background-color 0.4s ease, color 0.4s ease;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -184,7 +186,7 @@
 
   /* Gradient text */
   .gradient-text {
-    background: linear-gradient(135deg, hsl(141 22% 42%), hsl(150 20% 28%));
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -281,9 +283,17 @@
   }
 }
 
+/* Mobile menu slide */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-down { animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* Scrollbar styling */
@@ -291,9 +301,14 @@ html {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: hsl(60 9% 88%);
+  background: hsl(var(--muted));
 }
 ::-webkit-scrollbar-thumb {
-  background: hsl(88 18% 62%);
+  background: hsl(var(--secondary));
   border-radius: 3px;
+}
+
+/* Section container helper */
+.section-container {
+  @apply w-full max-w-6xl mx-auto px-5 sm:px-6 lg:px-8;
 }
