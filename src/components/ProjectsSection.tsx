@@ -64,7 +64,7 @@ const ProjectsSection = () => {
 
         <div className="text-center mt-12">
           <a
-            href="https://github.com/raghurajsingh152007-ctrl"
+            href="https://github.com/Raghu-here"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-medium text-primary border border-primary/20 bg-primary/5 transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:-translate-y-0.5"
