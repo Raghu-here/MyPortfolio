@@ -27,7 +27,7 @@ const ProjectsSection = () => {
   const heading = useScrollReveal({ variant: "fade-up" });
 
   useEffect(() => {
-    fetch("https://api.github.com/users/raghurajsingh152007-ctrl/repos?sort=updated&per_page=6")
+    fetch("https://api.github.com/users/Raghu-here/repos?sort=updated&per_page=6")
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data)) setRepos(data.slice(0, 6));
