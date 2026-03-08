@@ -61,7 +61,7 @@ const Footer = () => {
             © {new Date().getFullYear()} Raghuraj Singh. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground">
-            Built with <span className="text-primary">♥</span> using React & Tailwind
+            Built with <span className="text-primary">♥</span> Raghuraj 
           </p>
         </div>
       </div>
