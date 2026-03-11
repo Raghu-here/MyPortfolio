@@ -1,10 +1,10 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const stats = [
-  { value: "10+", label: "Projects Built" },
+  { value: "5+", label: "Projects Built" },
   { value: "5+", label: "Technologies" },
-  { value: "85+", label: "GitHub Contributions" },
-  { value: "8.8", label: "CGPA" },
+  { value: "100+", label: "GitHub Contributions" },
+  { value: "8.08", label: "CGPA" },
 ];
 
 const AboutSection = () => {
