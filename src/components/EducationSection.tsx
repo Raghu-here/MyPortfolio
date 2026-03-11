@@ -43,7 +43,7 @@ const EducationSection = () => {
                 <div className="mt-8 p-5 rounded-2xl bg-muted/50 border border-border">
                   <div className="flex items-center justify-between mb-3">
                     <span className="text-sm text-muted-foreground">Current CGPA</span>
-                    <span className="font-heading text-2xl sm:text-3xl font-bold gradient-text">8.8</span>
+                    <span className="font-heading text-2xl sm:text-3xl font-bold gradient-text">8.08</span>
                   </div>
                   <AnimatedProgressBar />
                   <p className="text-xs text-muted-foreground mt-3">Out of 10.0 scale</p>
