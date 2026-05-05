@@ -1,3 +1,4 @@
+
 # MyPortfolio
 
 A high-performance, interactive personal portfolio website featuring fluid animations, modern UI/UX patterns, and a custom-engineered cursor system.
@@ -16,11 +17,11 @@ This project is a modern, responsive portfolio designed to showcase professional
 
 -   **Custom Cursor System**: A dual-element cursor (dot and ring) with Linear Interpolation (Lerp) for smooth, lag-free tracking.
 -   **Performance-Optimized Reveal Logic**: Uses the `Intersection Observer API` to trigger animations only when elements enter the viewport, reducing CPU overhead.
+-   **SEO & Accessibility Enhanced**: Optimized with meta tags, semantic HTML, and a `robots.txt` file for superior search engine visibility and screen reader compatibility.
 -   **Staggered Hero Animations**: Sophisticated entry sequence for hero text and CTAs using timed CSS transitions and JavaScript triggers.
 -   **Interactive Email Utility**: One-click "Copy to Clipboard" functionality for contact information with visual feedback.
 -   **Adaptive Navigation**: A smart navbar that responds to scroll depth and includes a fully functional mobile overlay menu.
 -   **Fluid UI/UX**: Hover-aware cursor states that react to interactive elements like buttons, links, and project cards.
-
 ## 🛠 Tech Stack
 
 -   **Frontend**: HTML5, CSS3 (Custom Properties, Flexbox, Grid)
@@ -104,7 +105,7 @@ This project is ready for static hosting:
 
 1.  **GitHub Pages**: Push to `main` branch and enable Pages in settings.
 2.  **Vercel/Netlify**: Connect the repository; no build command required.
-
+3.  **SEO Ready**: Includes `robots.txt` and meta tags for immediate search engine indexing upon deployment.
 ## ❓ Troubleshooting
 
 | Issue | Solution |
