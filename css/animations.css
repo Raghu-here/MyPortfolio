@@ -1,0 +1,45 @@
+@keyframes grain {
+  0%, 100% { transform: translate3d(-2%, -2%, 0); }
+  50% { transform: translate3d(2%, 2%, 0); }
+}
+
+@keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+
+@keyframes scrollLine {
+  0% { clip-path: inset(0 0 100% 0); }
+  100% { clip-path: inset(0 0 0% 0); }
+}
+
+@keyframes marqueeScroll { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-50%, 0, 0); } }
+
+@keyframes blobDrift {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(5%, 8%, 0) scale(1.08); }
+}
+
+@keyframes symbolPulse {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 0px var(--color-1)); }
+  50% { transform: scale(1.1); filter: drop-shadow(0 0 20px var(--color-1)); }
+}
+
+/* Reveal Animations */
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 40px, 0);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: opacity, transform;
+}
+
+.revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

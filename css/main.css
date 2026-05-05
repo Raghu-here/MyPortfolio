@@ -1,0 +1,116 @@
+:root {
+  --bg-void: #06080a;
+  --bg-surface: #0d1117;
+  --bg-elevated: #161b22;
+  --color-1: #006466;
+  --color-2: #065a60;
+  --color-3: #0b525b;
+  --color-4: #144552;
+  --color-5: #1b3a4b;
+  --color-6: #212f45;
+  --color-7: #272640;
+  --color-8: #312244;
+  --color-9: #3e1f47;
+  --color-10: #4d194d;
+  --text-primary: #f0f4f8;
+  --text-secondary: #8892a4;
+  --text-muted: #4a5568;
+  --border-subtle: rgba(255,255,255,0.04);
+  --border-glow: rgba(0,100,102,0.3);
+  --white: #ffffff;
+
+  --gradient-teal: linear-gradient(135deg, #006466, #0b525b, #144552);
+  --gradient-deep: linear-gradient(135deg, #272640, #312244, #4d194d);
+  --gradient-text: linear-gradient(90deg, #006466, #0b525b, #272640, #4d194d);
+  --gradient-hero: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(0,100,102,0.25) 0%, transparent 70%);
+  --gradient-glow: radial-gradient(circle at center, rgba(0,100,102,0.15) 0%, transparent 60%);
+
+  --font-display: clamp(3.5rem, 9vw, 9.5rem);
+  --font-title: clamp(2rem, 5vw, 4.5rem);
+  --font-subtitle: clamp(1.2rem, 2.5vw, 1.8rem);
+  --font-body: clamp(0.95rem, 1.5vw, 1.1rem);
+  --font-small: 0.8rem;
+  --font-micro: 0.7rem;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 8rem;
+  --space-2xl: 12rem;
+
+  --section-padding: 8rem 0;
+}
+
+@media (max-width: 768px) {
+  :root { --section-padding: 5rem 0; }
+}
+@media (max-width: 600px) {
+  :root { --section-padding: 4rem 0; }
+}
+
+/* Base Styles */
+* { margin: 0; padding: 0; box-sizing: border-box; cursor: none; }
+@media (pointer: coarse) { * { cursor: auto; } }
+
+html { scroll-behavior: smooth; font-size: 16px; scrollbar-width: none; -ms-overflow-style: none; }
+html::-webkit-scrollbar { display: none; }
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-void);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url('data:image/svg+xml,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)" /></svg>');
+  animation: grain 8s infinite alternate;
+  will-change: transform;
+}
+
+::selection { background: rgba(0,100,102,0.4); color: var(--text-primary); }
+img { display: block; width: 100%; height: 100%; object-fit: cover; }
+a { text-decoration: none; color: inherit; }
+
+/* Custom Cursor */
+.cursor-dot {
+  width: 8px; height: 8px; background: var(--white);
+  position: fixed; top: 0; left: 0; border-radius: 50%;
+  pointer-events: none; z-index: 99999; transition: opacity 0.3s ease;
+  will-change: transform;
+}
+.cursor-ring {
+  width: 40px; height: 40px; border: 1px solid rgba(0,100,102,0.6);
+  position: fixed; top: 0; left: 0; border-radius: 50%;
+  pointer-events: none; z-index: 99998; transition: border-color 0.3s ease, opacity 0.3s ease;
+  will-change: transform;
+}
+.cursor-hover .cursor-dot { transform: scale(0); opacity: 0; }
+.cursor-hover .cursor-ring { transform: scale(1.8); border-color: var(--color-1); }
+@media (pointer: coarse) { .cursor-dot, .cursor-ring { display: none; } }
+
+/* Layout Components */
+.container { max-width: 1280px; margin: 0 auto; padding: 0 2rem; width: 100%; }
+@media (max-width: 600px) { .container { padding: 0 1.25rem; } }
+
+/* Shared Section Styles */
+section { padding: var(--section-padding); }
+.section-label {
+  font-size: var(--font-micro); font-weight: 700; letter-spacing: 0.25em;
+  color: var(--color-1); text-transform: uppercase; margin-bottom: 1.5rem;
+  display: flex; align-items: center; gap: 1rem;
+}
+.section-label::after { content: ""; flex-grow: 1; height: 1px; background: var(--border-subtle); }
+.section-title { font-size: var(--font-title); font-weight: 300; margin-bottom: 1.5rem; max-width: 600px; }
+.section-desc { font-size: var(--font-body); color: var(--text-secondary); max-width: 500px; margin-bottom: 4rem; }
