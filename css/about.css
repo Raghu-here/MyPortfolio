@@ -1,0 +1,24 @@
+.about-layout { display: grid; grid-template-columns: 1fr 340px; gap: 4rem; align-items: start; }
+@media (max-width: 900px) { .about-layout { grid-template-columns: 1fr; } }
+
+.about-intro { font-size: var(--font-small); color: var(--text-muted); margin-bottom: 0.5rem; }
+.about-heading { font-size: var(--font-title); font-weight: 300; line-height: 1.1; margin-bottom: 1.5rem; }
+.about-heading span { background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+.about-p { font-size: var(--font-body); color: var(--text-secondary); line-height: 1.8; margin-bottom: 2rem; }
+.about-divider { width: 60px; height: 2px; background: var(--gradient-teal); margin-bottom: 2rem; }
+
+.skills-grid { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.skill-pill {
+  padding: 0.4rem 1rem; background: var(--bg-elevated); border: 1px solid var(--border-subtle);
+  border-radius: 100px; font-size: var(--font-small); color: var(--text-secondary); transition: all 0.2s ease;
+}
+.skill-pill:hover { border-color: var(--color-1); color: var(--color-1); background: rgba(0, 100, 102, 0.08); }
+
+.about-number { font-size: 8rem; font-weight: 800; line-height: 1; color: var(--bg-elevated); margin-bottom: -2rem; padding-left: 1.5rem; opacity: 0.5; }
+
+.facts-card { background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 4px; padding: 2rem; }
+.fact-row { display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid var(--border-subtle); }
+.fact-row:last-child { border-bottom: none; }
+.fact-icon { font-size: 1.1rem; }
+.fact-label { font-size: var(--font-small); color: var(--text-secondary); }

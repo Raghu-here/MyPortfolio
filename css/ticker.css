@@ -1,0 +1,13 @@
+.marquee-strip {
+  overflow: hidden; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);
+  padding: 1rem 0; background: var(--bg-surface);
+}
+.marquee-content {
+  display: flex; white-space: nowrap; animation: marqueeScroll 30s linear infinite;
+  will-change: transform;
+}
+.marquee-item {
+  display: inline-block; font-size: var(--font-micro); font-weight: 700; letter-spacing: 0.2em;
+  color: var(--text-secondary); text-transform: uppercase; padding: 0 2rem;
+}
+.marquee-strip:hover .marquee-content { animation-play-state: paused; }

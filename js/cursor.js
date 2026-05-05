@@ -7,28 +7,29 @@ class CustomCursor {
     this.mouseY = 0;
     this.ringX = 0;
     this.ringY = 0;
-    this.isHovering = false;
     
     this.init();
   }
 
   init() {
+    if (!this.dot || !this.ring) return;
+
     if (window.matchMedia('(pointer: fine)').matches) {
       window.addEventListener('mousemove', e => {
         this.mouseX = e.clientX;
         this.mouseY = e.clientY;
         
-        // Immediate dot movement
+        // Immediate dot movement using translate3d for GPU acceleration
         this.dot.style.transform = `translate3d(${this.mouseX - 4}px, ${this.mouseY - 4}px, 0)`;
-      });
+      }, { passive: true });
 
       this.animate();
-      this.addEventListeners();
+      this.attachHoverListeners();
     }
   }
 
   animate() {
-    // Lerp for the ring
+    // Smooth lerp for the ring
     this.ringX += (this.mouseX - this.ringX) * 0.15;
     this.ringY += (this.mouseY - this.ringY) * 0.15;
     
@@ -37,13 +38,16 @@ class CustomCursor {
     requestAnimationFrame(() => this.animate());
   }
 
-  addEventListeners() {
-    const hoverElements = 'a, button, .skill-pill, .bento-card, #copy-email, .project-card';
-    document.querySelectorAll(hoverElements).forEach(el => {
+  attachHoverListeners() {
+    const hoverSelectors = 'a, button, .skill-pill, .bento-card, .project-card, label, input';
+    const elements = document.querySelectorAll(hoverSelectors);
+    
+    elements.forEach(el => {
       el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
       el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
     });
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => new CustomCursor());
+// Initialized via script link in HTML
+new CustomCursor();
