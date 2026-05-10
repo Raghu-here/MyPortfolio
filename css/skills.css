@@ -51,3 +51,4 @@
   .bento-grid { grid-template-columns: 1fr; }
   .col-7, .col-5, .col-4, .col-12 { grid-column: span 1; }
 }
+

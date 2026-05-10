@@ -61,6 +61,10 @@
 .btn-menu.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
 .btn-menu.open span:nth-child(2) { opacity: 0; }
 .btn-menu.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+@media (max-width: 640px) {
+  .nav-links, .nav-status { display: none; }
+  .btn-menu { display: flex; }
+}
 
 /* Mobile Menu Overlay */
 #mobile-menu {
