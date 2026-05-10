@@ -20,6 +20,7 @@ This project is a modern, responsive portfolio designed to showcase professional
 -   **Staggered Hero Animations**: Sophisticated entry sequence for hero text and CTAs using timed CSS transitions and JavaScript triggers.
 -   **Interactive Email Utility**: One-click "Copy to Clipboard" functionality for contact information with visual feedback.
 -   **Adaptive Navigation**: A smart navbar that responds to scroll depth and includes a fully functional mobile overlay menu.
+-   **Refined Project Showcase**: Features a polished UI with enhanced card styles and updated project details, including the Barrel Network integration.
 -   **Fluid UI/UX**: Hover-aware cursor states that react to interactive elements like buttons, links, and project cards.
 ## 🛠 Tech Stack
 
