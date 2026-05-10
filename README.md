@@ -20,7 +20,7 @@ This project is a modern, responsive portfolio designed to showcase professional
 -   **Staggered Hero Animations**: Sophisticated entry sequence for hero text and CTAs using timed CSS transitions and JavaScript triggers.
 -   **Interactive Email Utility**: One-click "Copy to Clipboard" functionality for contact information with visual feedback.
 -   **Adaptive Navigation**: A smart navbar that responds to scroll depth and includes a fully functional mobile overlay menu.
--   **Refined Project Showcase**: Features a polished UI with enhanced card styles and updated project details, including the Barrel Network integration.
+-   **Visual Project Showcase**: Features a polished UI with dedicated project image styling, updated layouts, and direct links for projects like Barrel Network.
 -   **Fluid UI/UX**: Hover-aware cursor states that react to interactive elements like buttons, links, and project cards.
 ## 🛠 Tech Stack
 
@@ -76,16 +76,16 @@ The project follows a modular structure separating concerns between styling and 
 
 ### Customizing Content
 -   **Email**: Update the email address in `js/main.js` inside the `copy-email` event listener.
+-   **Projects**: Update project links, descriptions, and image paths (e.g., `assets/barrel-network.png`) directly within the `index.html` file.
 -   **Animations**: Modify `css/animations.css` to change the duration or easing of the reveal effects.
 -   **Cursor**: The cursor sensitivity can be adjusted in `js/cursor.js` by changing the lerp factor (default: `0.15`).
 
 ### Adding Reveal Elements
 To make any new section animate on scroll, simply add the `reveal` class:
-```html
+html
 <section class="reveal">
   <!-- Your content here -->
 </section>
-```
 
 ## 🔧 Development
 
