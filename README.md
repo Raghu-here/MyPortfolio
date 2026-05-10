@@ -8,20 +8,19 @@ A high-performance, interactive personal portfolio website featuring fluid anima
 [![Tech: Vanilla JS](https://img.shields.io/badge/Tech-Vanilla%20JS-F7DF1E.svg)](#)
 ## 🚀 Overview
 
-This project is a modern, responsive portfolio designed to showcase professional work and skills with a focus on smooth user experience. Unlike standard static sites, it utilizes advanced DOM manipulation and CSS orchestration to create a premium, application-like feel.
+This project is a modern, responsive portfolio designed to showcase professional work and skills with a focus on smooth user experience. Unlike standard static sites, it utilizes advanced DOM manipulation and CSS orchestration to create a premium, application-like feel. The codebase is strictly modular, separating styles and logic for every component to ensure high maintainability and performance.
 
 **Target Audience:** Recruiters, collaborators, and developers looking for a high-quality portfolio template.
-
 ## ✨ Features
 
--   **Interactive Marquee Control**: Infinite scroll rows in the stack section that smoothly decelerate on hover using `updatePlaybackRate` for better readability.
--   **Dynamic Contact System**: A fully functional contact form with client-side validation, email regex checking, and automated `mailto` link generation.
--   **Staggered Hero Entry**: A sophisticated, timed loading sequence for hero elements (eyebrow, text, CTAs) to create a premium first impression.
--   **Bento Grid Styling**: Modern, responsive grid layouts for skills and project showcases, providing a clean and organized visual hierarchy.
--   **Performance-Optimized Reveal Logic**: Decoupled `Intersection Observer` implementation that triggers animations only when elements enter the viewport.
--   **Adaptive Navigation**: A smart navbar that responds to scroll depth and includes a fully functional mobile overlay menu with body-scroll locking.
--   **Custom Cursor System**: A dual-element cursor (dot and ring) with Linear Interpolation (Lerp) for smooth, lag-free tracking.
--   **SEO & Accessibility Enhanced**: Optimized with meta tags, semantic HTML, and a `robots.txt` file for superior search engine visibility.
+- **Interactive Marquee Control**: Infinite scroll rows in the stack section that smoothly decelerate on hover using `updatePlaybackRate` for better readability.
+- **Dynamic Contact System**: A fully functional contact form with client-side validation, email regex checking, and automated `mailto` link generation.
+- **Staggered Hero Entry**: A sophisticated, timed loading sequence for hero elements (eyebrow, text, CTAs) to create a premium first impression.
+- **Bento Grid Styling**: Modern, responsive grid layouts for skills and project showcases, providing a clean and organized visual hierarchy.
+- **Performance-Optimized Reveal Logic**: Decoupled `Intersection Observer` implementation that triggers animations only when elements enter the viewport.
+- **Adaptive Navigation**: A smart navbar that responds to scroll depth and includes a fully functional mobile overlay menu with body-scroll locking.
+- **Custom Cursor System**: A dual-element cursor (dot and ring) with Linear Interpolation (Lerp) for smooth, lag-free tracking.
+- **SEO & Accessibility Enhanced**: Optimized with meta tags, semantic HTML, and a `robots.txt` file for superior search engine visibility.
 ## 🛠 Tech Stack
 
 -   **Frontend**: HTML5, CSS3 (Custom Properties, Flexbox, Grid)
