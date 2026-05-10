@@ -397,67 +397,57 @@
       display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
     }
     .project-card {
-      background: var(--elevated); border: 1px solid var(--border);
+    .project-card {
+      background: #111111; border: 1px solid rgba(255,255,255,.05);
       border-radius: 12px; overflow: hidden;
       display: flex; flex-direction: column;
       transition: border-color .3s, transform .3s var(--ease);
     }
-    .project-card:hover { border-color: rgba(26,155,138,.3); transform: translateY(-4px); }
+    .project-card:hover { border-color: rgba(255,255,255,.1); transform: translateY(-3px); }
     
     .project-img-wrapper {
       width: 100%; aspect-ratio: 16 / 9;
-      background: linear-gradient(135deg, rgba(235,93,65,.15), rgba(235,93,65,.05));
-      position: relative; overflow: hidden; padding: 2rem;
+      position: relative; overflow: hidden; padding: 1.5rem;
       display: flex; align-items: center; justify-content: center;
-      border-bottom: 1px solid var(--border);
-    }
-    .project-card:nth-child(2) .project-img-wrapper {
-      background: linear-gradient(135deg, rgba(255,123,101,.15), rgba(255,123,101,.05));
-    }
-    .project-img-inner {
-      width: 100%; height: 100%; background: #ffffff; border-radius: 6px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-      display: flex; align-items: center; justify-content: center;
-      color: #000; font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: .85rem;
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none"><rect width="100%" height="100%" fill="%23ffffff"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="14" fill="%23999999">[ Project Image Placeholder ]</text></svg>');
-      background-size: cover; background-position: center;
-    }
-    .project-card:nth-child(2) .project-img-inner {
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none"><rect width="100%" height="100%" fill="%230c1016"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="14" fill="%23666666">[ Dark Project Image ]</text></svg>');
+      border-bottom: 1px solid rgba(255,255,255,.05);
     }
     
-    .project-body { padding: 2rem; flex: 1; display: flex; flex-direction: column; }
+    .project-body { padding: 2.25rem; flex: 1; display: flex; flex-direction: column; }
     .project-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
-    .project-title { font-size: 1.6rem; font-weight: 700; color: var(--text-1); letter-spacing: -0.02em; }
-    .project-links { display: flex; gap: 1rem; color: var(--text-2); }
+    .project-title { font-size: 1.8rem; font-weight: 700; color: #ffffff; letter-spacing: -0.02em; }
+    .project-links { display: flex; gap: 1rem; color: #a1a1a1; }
     .project-links a { color: inherit; transition: color .2s; }
-    .project-links a:hover { color: var(--text-1); }
-    .project-links svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .project-links a:hover { color: #ffffff; }
+    .project-links svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
     
-    .project-desc { color: var(--text-2); font-size: 1rem; line-height: 1.6; margin-bottom: 2rem; flex: 1; font-weight: 300; }
+    .project-desc { color: #a1a1a1; font-size: 1.05rem; line-height: 1.6; margin-bottom: 2rem; flex: 1; font-weight: 400; }
     
-    .project-tech-label { font-size: .75rem; letter-spacing: .15em; text-transform: uppercase; color: var(--text-3); font-weight: 600; margin-bottom: .85rem; }
-    .project-tech { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 2rem; }
+    .project-tech-label { font-size: .75rem; letter-spacing: .15em; text-transform: uppercase; color: #666; font-weight: 600; margin-bottom: 1rem; }
+    .project-tech { display: flex; flex-wrap: wrap; gap: .75rem; margin-bottom: 2.5rem; }
     .tech-pill {
-      display: flex; align-items: center; gap: .4rem;
-      border: 1px solid var(--border); border-radius: 6px; padding: .35rem .75rem;
-      font-size: .82rem; color: var(--text-2); background: rgba(255,255,255,.02);
+      display: flex; align-items: center; gap: .5rem;
+      border: 1px solid rgba(255,255,255,.1); border-radius: 8px; padding: .4rem .85rem;
+      font-size: .85rem; color: #d1d1d1; background: transparent;
+      font-weight: 400;
     }
     .tech-pill svg { width: 14px; height: 14px; }
     
     .project-footer {
-      display: flex; justify-content: flex-end; align-items: center;
-      padding-top: 0.5rem;
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.05);
     }
+    .status-active { display: flex; align-items: center; gap: .6rem; font-size: .9rem; color: #00e676; font-weight: 500; font-family: 'DM Sans', sans-serif;}
+    .status-active::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #00e676; box-shadow: 0 0 10px rgba(0,230,118,0.5); }
     .project-details { 
-      font-size: .85rem; color: var(--text-2); font-weight: 500; 
+      font-size: .95rem; color: #a1a1a1; font-weight: 500; 
       transition: color .2s; display: inline-flex; align-items: center; gap: .35rem; 
+      font-family: 'DM Sans', sans-serif;
     }
     .project-details::after {
       content: '↗'; transition: transform .2s ease;
     }
-    .project-details:hover { color: var(--text-1); }
-    .project-details:hover::after { transform: translate(2px, -2px); }
+    .project-details:hover { color: #ffffff; }
+    .project-details:hover::after { transform: translate(3px, -3px); }
 
     /* ===== ABOUT ===== */
     #about { background: var(--surface); }
@@ -820,7 +810,8 @@
               </div>
               
               <div class="project-footer">
-                <a href="https://github.com/Raghu-here/barrel-network-backend" target="_blank" rel="noopener noreferrer" class="project-details" style="margin-left: auto;">View details on GitHub ↗</a>
+                <span class="status-active">All Systems Operational</span>
+                <a href="https://github.com/Raghu-here/barrel-network-backend" target="_blank" rel="noopener noreferrer" class="project-details">View Details</a>
               </div>
             </div>
           </div>
@@ -834,8 +825,18 @@
               <div class="project-header">
                 <h3 class="project-title" style="font-family: 'DM Sans', sans-serif;">More Projects <span style="font-weight:300; font-style:italic; color:var(--text-3); font-size:1.1rem; vertical-align:middle; margin-left:0.5rem">— dropping soon</span></h3>
               </div>
-              <p class="project-desc">Currently working on some exciting new tools and applications. They will be revealed here when ready.</p>
-            </div>
+              <div class="project-tech-label">TECHNOLOGIES</div>
+              <div class="project-tech">
+                <span class="tech-pill"><span style="color:#61dafb">⚛</span> React.js</span>
+                <span class="tech-pill"><span style="color:#8cc84b">⬢</span> Node.js</span>
+                <span class="tech-pill"><span style="color:#4db33d">🍃</span> MongoDB</span>
+                <span class="tech-pill"><span style="color:#f38020">☁</span> Cloudflare R2</span>
+              </div>
+              
+              <div class="project-footer">
+                <span class="status-active">All Systems Operational</span>
+                <a href="#" class="project-details">View Details</a>
+              </div>
           </div>
         </div>
       </div>
