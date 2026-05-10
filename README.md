@@ -1,12 +1,11 @@
 
-# MyPortfolio
+# 🎨 MyPortfolio
 
-A high-performance, interactive personal portfolio website featuring fluid animations, modern UI/UX patterns, and a custom-engineered cursor system.
+A high-performance, interactive personal portfolio website featuring fluid animations, modern UI/UX patterns, and a custom-engineered cursor system. Built with a modular architecture for optimal performance and maintainability.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Status: Active](https://img.shields.io/badge/Status-Active-success.svg)](#)
 [![Tech: Vanilla JS](https://img.shields.io/badge/Tech-Vanilla%20JS-F7DF1E.svg)](#)
-
 ## 🚀 Overview
 
 This project is a modern, responsive portfolio designed to showcase professional work and skills with a focus on smooth user experience. Unlike standard static sites, it utilizes advanced DOM manipulation and CSS orchestration to create a premium, application-like feel.
