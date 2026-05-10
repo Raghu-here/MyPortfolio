@@ -14,14 +14,14 @@ This project is a modern, responsive portfolio designed to showcase professional
 
 ## ✨ Features
 
+-   **Interactive Marquee Control**: Infinite scroll rows in the stack section that smoothly decelerate on hover using `updatePlaybackRate` for better readability.
+-   **Dynamic Contact System**: A fully functional contact form with client-side validation, email regex checking, and automated `mailto` link generation.
+-   **Staggered Hero Entry**: A sophisticated, timed loading sequence for hero elements (eyebrow, text, CTAs) to create a premium first impression.
+-   **Bento Grid Styling**: Modern, responsive grid layouts for skills and project showcases, providing a clean and organized visual hierarchy.
+-   **Performance-Optimized Reveal Logic**: Decoupled `Intersection Observer` implementation that triggers animations only when elements enter the viewport.
+-   **Adaptive Navigation**: A smart navbar that responds to scroll depth and includes a fully functional mobile overlay menu with body-scroll locking.
 -   **Custom Cursor System**: A dual-element cursor (dot and ring) with Linear Interpolation (Lerp) for smooth, lag-free tracking.
--   **Performance-Optimized Reveal Logic**: Uses the `Intersection Observer API` to trigger animations only when elements enter the viewport, reducing CPU overhead.
--   **SEO & Accessibility Enhanced**: Optimized with meta tags, semantic HTML, and a `robots.txt` file for superior search engine visibility and screen reader compatibility.
--   **Staggered Hero Animations**: Sophisticated entry sequence for hero text and CTAs using timed CSS transitions and JavaScript triggers.
--   **Interactive Email Utility**: One-click "Copy to Clipboard" functionality for contact information with visual feedback.
--   **Adaptive Navigation**: A smart navbar that responds to scroll depth and includes a fully functional mobile overlay menu.
--   **Visual Project Showcase**: Features a polished UI with dedicated project image styling, updated layouts, and direct links for projects like Barrel Network.
--   **Fluid UI/UX**: Hover-aware cursor states that react to interactive elements like buttons, links, and project cards.
+-   **SEO & Accessibility Enhanced**: Optimized with meta tags, semantic HTML, and a `robots.txt` file for superior search engine visibility.
 ## 🛠 Tech Stack
 
 -   **Frontend**: HTML5, CSS3 (Custom Properties, Flexbox, Grid)
@@ -33,22 +33,26 @@ This project is a modern, responsive portfolio designed to showcase professional
 
 The project follows a modular structure separating concerns between styling and logic:
 
-```text
+text
 ├── css/
 │   ├── animations.css    # Keyframe definitions and reveal transitions
-│   └── main.css          # Layout, typography, and component styling
+│   ├── skills.css        # Bento grid and skill card layouts
+│   └── contact.css       # Form validation and success state styling
 ├── js/
-│   ├── cursor.js         # CustomCursor class and mouse tracking logic
-│   └── main.js           # Scroll effects, mobile menu, and reveal observers
+│   ├── animations.js     # Marquee deceleration and playback logic
+│   ├── contact.js        # Form validation and mailto handling
+│   ├── hero.js           # Staggered load sequences
+│   ├── navbar.js         # Scroll-aware nav and mobile menu logic
+│   └── reveal.js         # Intersection Observer implementation
 └── index.html            # Semantic HTML5 structure
-```
+
 
 ### Key Components
 
-1.  **CustomCursor Class (`cursor.js`)**: Encapsulates the mouse tracking logic. It uses `requestAnimationFrame` for the outer ring to ensure 60fps+ movement that feels "organic."
-2.  **Intersection Observer (`main.js`)**: Manages the `.reveal` class, ensuring that content fades and slides in gracefully as the user scrolls.
-3.  **Scroll Debouncing**: The navbar scroll effect is optimized using `requestAnimationFrame` to prevent layout thrashing during rapid scrolling.
-
+1.  **Marquee Controller (`animations.js`)**: Manages the playback rate of CSS animations, allowing for smooth transitions between active and hovered states.
+2.  **Contact Handler (`contact.js`)**: Processes form inputs, validates email formats, and constructs the `mailto` URI for seamless communication.
+3.  **Reveal Engine (`reveal.js`)**: A centralized Intersection Observer that manages the `.reveal` class across the entire application.
+4.  **Hero Sequencer (`hero.js`)**: Orchestrates the initial page load animations using a delay-based staggered approach.
 ## 🚦 Getting Started
 
 ### Prerequisites
@@ -75,13 +79,14 @@ The project follows a modular structure separating concerns between styling and 
 ## 💻 Usage
 
 ### Customizing Content
--   **Email**: Update the email address in `js/main.js` inside the `copy-email` event listener.
+-   **Email**: Update the recipient address in `js/contact.js` within the `window.location.href` assignment.
+-   **Hero Timing**: Adjust the entry sequence delays by modifying the `delays` array in `js/hero.js`.
+-   **Marquee Speed**: Change the deceleration and acceleration factors in `js/animations.js` within the `ease` function parameters.
 -   **Projects**: Update project links, descriptions, and image paths (e.g., `assets/barrel-network.png`) directly within the `index.html` file.
--   **Animations**: Modify `css/animations.css` to change the duration or easing of the reveal effects.
--   **Cursor**: The cursor sensitivity can be adjusted in `js/cursor.js` by changing the lerp factor (default: `0.15`).
 
 ### Adding Reveal Elements
 To make any new section animate on scroll, simply add the `reveal` class:
+
 html
 <section class="reveal">
   <!-- Your content here -->
