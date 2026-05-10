@@ -313,78 +313,163 @@
       text-transform: uppercase; color: var(--text-3); margin-top: .25rem;
     }
 
-    /* ===== MARQUEE ===== */
-    .marquee-strip {
+    /* ===== STACK SCROLL ===== */
+    .stack-scroll {
+      padding: 4rem 0;
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
       background: var(--surface);
-      overflow: hidden; padding: .85rem 0;
+      overflow: hidden;
     }
-    .marquee-track {
-      display: flex; gap: 0;
-      animation: marquee 28s linear infinite;
+    .stack-scroll-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .stack-scroll-kicker {
+      font-size: .68rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--teal);
+      font-weight: 600;
+      margin-bottom: .5rem;
+    }
+    .stack-scroll-heading {
+      font-family: 'DM Serif Display', serif;
+      font-style: italic;
+      font-size: 1.5rem;
+      color: var(--text-2);
+      font-weight: 400;
+    }
+    .stack-scroll-viewport {
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+    }
+    .stack-row {
+      display: flex;
+      gap: .75rem;
+      margin-bottom: .75rem;
       width: max-content;
     }
-    .marquee-track:hover { animation-play-state: paused; }
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
+    .stack-row:last-child { margin-bottom: 0; }
+    .stack-pill {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--elevated);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: .55rem 1.1rem;
+      font-size: .82rem;
+      font-weight: 500;
+      color: var(--text-2);
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: border-color .2s, color .2s;
+      cursor: default;
     }
-    .marquee-item {
-      white-space: nowrap; padding: 0 2rem;
-      font-size: .68rem; font-weight: 500; letter-spacing: .18em;
-      text-transform: uppercase; color: var(--text-3);
+    .stack-pill:hover {
+      border-color: rgba(26,155,138,.4);
+      color: var(--text-1);
+    }
+    .stack-pill .pill-icon { pointer-events: none; }
+    .stack-row-1 { animation: scroll-left 40s linear infinite; }
+    .stack-row-2 { animation: scroll-right 50s linear infinite; }
+    @keyframes scroll-left {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-33.333%); }
+    }
+    @keyframes scroll-right {
+      from { transform: translateX(-33.333%); }
+      to   { transform: translateX(0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .stack-row-1, .stack-row-2 { animation: none; }
+    }
+    @media (max-width: 640px) {
+      .stack-pill { font-size: .75rem; padding: .45rem .9rem; }
     }
 
     /* ===== SECTIONS ===== */
     .section { padding: 7rem 0; }
 
     /* ===== WORK ===== */
+    #work .section-header {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;
+    }
     #work .section-title {
       font-family: 'DM Serif Display', serif;
       font-size: clamp(2.2rem, 5vw, 4rem);
-      line-height: 1.1; margin-bottom: .75rem;
+      line-height: 1.1; margin-bottom: .25rem; color: var(--text-1);
     }
-    #work .section-desc {
-      color: var(--text-2); font-weight: 300; max-width: 480px;
-      margin-bottom: 3.5rem;
+    #work .section-kicker { margin-bottom: .5rem; }
+    .view-all-link {
+      font-size: .85rem; font-weight: 500; color: var(--text-2);
+      transition: color .2s; display: inline-flex; align-items: center; gap: .25rem;
     }
+    .view-all-link:hover { color: var(--text-1); }
+    
     .work-grid {
-      display: grid; grid-template-columns: repeat(2, 1fr);
-      gap: 1.5px; background: var(--border); border-radius: var(--radius);
-      overflow: hidden;
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
     }
     .project-card {
-      position: relative; min-height: 280px;
-      background: var(--elevated); padding: 2.25rem;
-      display: flex; flex-direction: column; justify-content: space-between;
-      overflow: hidden;
-      transition: background .35s var(--ease);
+      background: var(--elevated); border: 1px solid var(--border);
+      border-radius: 12px; overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: border-color .3s, transform .3s var(--ease);
     }
-    .project-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--teal), var(--violet));
-      transform: scaleX(0); transform-origin: left;
-      transition: transform .45s var(--ease);
+    .project-card:hover { border-color: rgba(26,155,138,.3); transform: translateY(-4px); }
+    
+    .project-img-wrapper {
+      width: 100%; aspect-ratio: 16 / 9;
+      background: linear-gradient(135deg, rgba(235,93,65,.15), rgba(235,93,65,.05));
+      position: relative; overflow: hidden; padding: 2rem;
+      display: flex; align-items: center; justify-content: center;
+      border-bottom: 1px solid var(--border);
     }
-    .project-card:hover { background: var(--elevated-hover); }
-    .project-card:hover::before { transform: none; }
-    .card-top { display: flex; justify-content: space-between; align-items: flex-start; }
-    .card-num {
-      font-family: 'DM Serif Display', serif;
-      font-style: italic; font-size: 1.1rem; color: var(--text-3);
+    .project-card:nth-child(2) .project-img-wrapper {
+      background: linear-gradient(135deg, rgba(255,123,101,.15), rgba(255,123,101,.05));
     }
-    .card-icon { font-size: 2.2rem; line-height: 1; }
-    .card-body { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; margin-top: 1.5rem; }
-    .card-title {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.35rem; color: var(--text-1); margin-bottom: .4rem;
+    .project-img-inner {
+      width: 100%; height: 100%; background: #ffffff; border-radius: 6px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+      display: flex; align-items: center; justify-content: center;
+      color: #000; font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: .85rem;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none"><rect width="100%" height="100%" fill="%23ffffff"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="14" fill="%23999999">[ Project Image Placeholder ]</text></svg>');
+      background-size: cover; background-position: center;
     }
-    .card-status {
-      font-size: .72rem; font-style: italic; color: var(--text-3);
-      letter-spacing: .06em;
+    .project-card:nth-child(2) .project-img-inner {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none"><rect width="100%" height="100%" fill="%230c1016"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="14" fill="%23666666">[ Dark Project Image ]</text></svg>');
     }
+    
+    .project-body { padding: 2rem; flex: 1; display: flex; flex-direction: column; }
+    .project-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+    .project-title { font-size: 1.6rem; font-weight: 700; color: var(--text-1); letter-spacing: -0.02em; }
+    .project-links { display: flex; gap: 1rem; color: var(--text-2); }
+    .project-links a { color: inherit; transition: color .2s; }
+    .project-links a:hover { color: var(--text-1); }
+    .project-links svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    
+    .project-desc { color: var(--text-2); font-size: 1rem; line-height: 1.6; margin-bottom: 2rem; flex: 1; font-weight: 300; }
+    
+    .project-tech-label { font-size: .75rem; letter-spacing: .15em; text-transform: uppercase; color: var(--text-3); font-weight: 600; margin-bottom: .85rem; }
+    .project-tech { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 2rem; }
+    .tech-pill {
+      display: flex; align-items: center; gap: .4rem;
+      border: 1px solid var(--border); border-radius: 6px; padding: .35rem .75rem;
+      font-size: .82rem; color: var(--text-2); background: rgba(255,255,255,.02);
+    }
+    .tech-pill svg { width: 14px; height: 14px; }
+    
+    .project-footer {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 1.25rem; border-top: 1px solid var(--border);
+    }
+    .status-active { display: flex; align-items: center; gap: .5rem; font-size: .85rem; color: #10b981; font-weight: 500; }
+    .status-active::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #10b981; }
+    .project-details { font-size: .85rem; color: var(--text-2); font-weight: 500; transition: color .2s; display: inline-flex; align-items: center; gap: .25rem; }
+    .project-details:hover { color: var(--text-1); }
 
     /* ===== ABOUT ===== */
     #about { background: var(--surface); }
@@ -641,11 +726,11 @@
           </div>
           <div class="hero-stats" id="heroStats">
             <div>
-              <div class="stat-number">2+</div>
+              <div class="stat-number">1+</div>
               <div class="stat-label">Years Experience</div>
             </div>
             <div>
-              <div class="stat-number">15+</div>
+              <div class="stat-number">5+</div>
               <div class="stat-label">Projects Built</div>
             </div>
             <div>
@@ -657,59 +742,146 @@
       </div>
     </section>
 
-    <!-- MARQUEE -->
-    <div class="marquee-strip" role="marquee" aria-label="Skills ticker">
-      <div class="marquee-track">
-        <span class="marquee-item">UI/UX Design ✦ React Development ✦ Full Stack Engineering ✦ TypeScript ✦ Node.js ✦ Figma to Code ✦ Responsive Design ✦ API Integration ✦ Clean Code ✦ PostgreSQL ✦ Next.js ✦ Tailwind CSS ✦ DevOps ✦ &nbsp;</span>
-        <span class="marquee-item">UI/UX Design ✦ React Development ✦ Full Stack Engineering ✦ TypeScript ✦ Node.js ✦ Figma to Code ✦ Responsive Design ✦ API Integration ✦ Clean Code ✦ PostgreSQL ✦ Next.js ✦ Tailwind CSS ✦ DevOps ✦ &nbsp;</span>
+    <!-- STACK SCROLL -->
+    <section class="stack-scroll" aria-label="Tech stack showcase">
+      <div class="stack-scroll-header">
+        <p class="stack-scroll-kicker">Built With</p>
+        <p class="stack-scroll-heading">The tools behind the work.</p>
       </div>
-    </div>
+      <div class="stack-scroll-viewport">
+        <!-- Row 1: scrolls LEFT -->
+        <div class="stack-row stack-row-1" aria-hidden="true">
+          <span class="stack-pill"><span class="pill-icon">⚛️</span>React</span>
+          <span class="stack-pill"><span class="pill-icon">🔺</span>Next.js</span>
+          <span class="stack-pill"><span class="pill-icon">🟦</span>TypeScript</span>
+          <span class="stack-pill"><span class="pill-icon">🟢</span>Node.js</span>
+          <span class="stack-pill"><span class="pill-icon">🎨</span>Figma</span>
+          <span class="stack-pill"><span class="pill-icon">🐘</span>PostgreSQL</span>
+          <span class="stack-pill"><span class="pill-icon">💨</span>Tailwind CSS</span>
+          <span class="stack-pill"><span class="pill-icon">🔗</span>REST APIs</span>
+          <span class="stack-pill"><span class="pill-icon">⚛️</span>React</span>
+          <span class="stack-pill"><span class="pill-icon">🔺</span>Next.js</span>
+          <span class="stack-pill"><span class="pill-icon">🟦</span>TypeScript</span>
+          <span class="stack-pill"><span class="pill-icon">🟢</span>Node.js</span>
+          <span class="stack-pill"><span class="pill-icon">🎨</span>Figma</span>
+          <span class="stack-pill"><span class="pill-icon">🐘</span>PostgreSQL</span>
+          <span class="stack-pill"><span class="pill-icon">💨</span>Tailwind CSS</span>
+          <span class="stack-pill"><span class="pill-icon">🔗</span>REST APIs</span>
+          <span class="stack-pill"><span class="pill-icon">⚛️</span>React</span>
+          <span class="stack-pill"><span class="pill-icon">🔺</span>Next.js</span>
+          <span class="stack-pill"><span class="pill-icon">🟦</span>TypeScript</span>
+          <span class="stack-pill"><span class="pill-icon">🟢</span>Node.js</span>
+          <span class="stack-pill"><span class="pill-icon">🎨</span>Figma</span>
+          <span class="stack-pill"><span class="pill-icon">🐘</span>PostgreSQL</span>
+          <span class="stack-pill"><span class="pill-icon">💨</span>Tailwind CSS</span>
+          <span class="stack-pill"><span class="pill-icon">🔗</span>REST APIs</span>
+        </div>
+        <!-- Row 2: scrolls RIGHT -->
+        <div class="stack-row stack-row-2" aria-hidden="true">
+          <span class="stack-pill"><span class="pill-icon">🐙</span>Git</span>
+          <span class="stack-pill"><span class="pill-icon">▲</span>Vercel</span>
+          <span class="stack-pill"><span class="pill-icon">⚡</span>Express</span>
+          <span class="stack-pill"><span class="pill-icon">🌐</span>HTML5</span>
+          <span class="stack-pill"><span class="pill-icon">🎭</span>CSS3</span>
+          <span class="stack-pill"><span class="pill-icon">🌿</span>Netlify</span>
+          <span class="stack-pill"><span class="pill-icon">🖌️</span>UI/UX Design</span>
+          <span class="stack-pill"><span class="pill-icon">📐</span>Design Systems</span>
+          <span class="stack-pill"><span class="pill-icon">💻</span>VS Code</span>
+          <span class="stack-pill"><span class="pill-icon">🐙</span>Git</span>
+          <span class="stack-pill"><span class="pill-icon">▲</span>Vercel</span>
+          <span class="stack-pill"><span class="pill-icon">⚡</span>Express</span>
+          <span class="stack-pill"><span class="pill-icon">🌐</span>HTML5</span>
+          <span class="stack-pill"><span class="pill-icon">🎭</span>CSS3</span>
+          <span class="stack-pill"><span class="pill-icon">🌿</span>Netlify</span>
+          <span class="stack-pill"><span class="pill-icon">🖌️</span>UI/UX Design</span>
+          <span class="stack-pill"><span class="pill-icon">📐</span>Design Systems</span>
+          <span class="stack-pill"><span class="pill-icon">💻</span>VS Code</span>
+          <span class="stack-pill"><span class="pill-icon">🐙</span>Git</span>
+          <span class="stack-pill"><span class="pill-icon">▲</span>Vercel</span>
+          <span class="stack-pill"><span class="pill-icon">⚡</span>Express</span>
+          <span class="stack-pill"><span class="pill-icon">🌐</span>HTML5</span>
+          <span class="stack-pill"><span class="pill-icon">🎭</span>CSS3</span>
+          <span class="stack-pill"><span class="pill-icon">🌿</span>Netlify</span>
+          <span class="stack-pill"><span class="pill-icon">🖌️</span>UI/UX Design</span>
+          <span class="stack-pill"><span class="pill-icon">📐</span>Design Systems</span>
+          <span class="stack-pill"><span class="pill-icon">💻</span>VS Code</span>
+        </div>
+      </div>
+    </section>
 
     <!-- WORK -->
-    <section id="work" class="section" aria-label="Selected work">
+    <section id="work" class="section" aria-label="Featured Projects">
       <div class="container">
-        <div class="section-kicker reveal">Selected Work</div>
-        <h2 class="section-title reveal">Things I've Built</h2>
-        <p class="section-desc reveal">Projects drop when they're ready. Here's a preview of what's cooking.</p>
+        <div class="section-header reveal">
+          <div>
+            <div class="section-kicker">Featured</div>
+            <h2 class="section-title" style="font-family: 'DM Sans', sans-serif; font-weight: 700;">Projects</h2>
+          </div>
+          <a href="https://github.com/Raghu-here" target="_blank" rel="noopener noreferrer" class="view-all-link">
+            View All on GitHub ↗
+          </a>
+        </div>
+        
         <div class="work-grid">
+          <!-- CARD 1 -->
           <div class="project-card reveal">
-            <div class="card-top">
-              <span class="card-num">01</span>
-              <span class="card-icon" aria-hidden="true">⬡</span>
+            <div class="project-img-wrapper" style="background: radial-gradient(circle at center, rgb(255, 127, 80) 0%, rgb(139, 44, 44) 100%);">
+              <div class="project-img-inner"></div>
             </div>
-            <div class="card-body">
-              <h3 class="card-title">Dangerously Good</h3>
-              <p class="card-status">— coming soon</p>
+            <div class="project-body">
+              <div class="project-header">
+                <h3 class="project-title" style="font-family: 'DM Sans', sans-serif;">DaemonDoc</h3>
+                <div class="project-links">
+                  <a href="#" aria-label="Live Demo"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></a>
+                  <a href="#" aria-label="GitHub Source"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                </div>
+              </div>
+              <p class="project-desc">AI-powered platform that automatically generates and keeps GitHub READMEs in sync using webhooks, background workers, and large language models.</p>
+              
+              <div class="project-tech-label">TECHNOLOGIES</div>
+              <div class="project-tech">
+                <span class="tech-pill"><span style="color:#61dafb">⚛</span> React</span>
+                <span class="tech-pill"><span style="color:#8cc84b">⬢</span> Node.js</span>
+                <span class="tech-pill"><span style="color:#fff">ex</span> Express</span>
+                <span class="tech-pill"><span style="color:#4db33d">🍃</span> MongoDB</span>
+                <span class="tech-pill"><span style="color:#dc382d">🔴</span> Redis</span>
+                <span class="tech-pill"><span style="color:#d92323">🐂</span> BullMQ</span>
+              </div>
+              
+              <div class="project-footer">
+                <span class="status-active">All Systems Operational</span>
+                <a href="#" class="project-details">View Details ↗</a>
+              </div>
             </div>
           </div>
-          <div class="project-card reveal" style="transition-delay:.1s">
-            <div class="card-top">
-              <span class="card-num">02</span>
-              <span class="card-icon" aria-hidden="true">◈</span>
+
+          <!-- CARD 2 -->
+          <div class="project-card reveal" style="transition-delay: .15s;">
+            <div class="project-img-wrapper" style="background: radial-gradient(circle at center, rgb(255, 140, 100) 0%, rgb(180, 50, 50) 100%);">
+              <div class="project-img-inner"></div>
             </div>
-            <div class="card-body">
-              <h3 class="card-title">Future Chaos</h3>
-              <p class="card-status">— in progress</p>
-            </div>
-          </div>
-          <div class="project-card reveal" style="transition-delay:.2s">
-            <div class="card-top">
-              <span class="card-num">03</span>
-              <span class="card-icon" aria-hidden="true">◎</span>
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">Pixels Wrangled</h3>
-              <p class="card-status">— loading...</p>
-            </div>
-          </div>
-          <div class="project-card reveal" style="transition-delay:.3s">
-            <div class="card-top">
-              <span class="card-num">04</span>
-              <span class="card-icon" aria-hidden="true">⟡</span>
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">Top Secret</h3>
-              <p class="card-status">— classified</p>
+            <div class="project-body">
+              <div class="project-header">
+                <h3 class="project-title" style="font-family: 'DM Sans', sans-serif;">NovaDrive</h3>
+                <div class="project-links">
+                  <a href="#" aria-label="Live Demo"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></a>
+                  <a href="#" aria-label="GitHub Source"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                </div>
+              </div>
+              <p class="project-desc">A next-generation cloud storage platform with chunked uploads, secure file handling, and AI-powered organization with automation and productivity focused</p>
+              
+              <div class="project-tech-label">TECHNOLOGIES</div>
+              <div class="project-tech">
+                <span class="tech-pill"><span style="color:#61dafb">⚛</span> React.js</span>
+                <span class="tech-pill"><span style="color:#8cc84b">⬢</span> Node.js</span>
+                <span class="tech-pill"><span style="color:#4db33d">🍃</span> MongoDB</span>
+                <span class="tech-pill"><span style="color:#f38020">☁</span> Cloudflare R2</span>
+              </div>
+              
+              <div class="project-footer">
+                <span class="status-active">All Systems Operational</span>
+                <a href="#" class="project-details">View Details ↗</a>
+              </div>
             </div>
           </div>
         </div>
@@ -969,6 +1141,42 @@
       form.style.display = 'none';
       successCard.classList.add('show');
     });
+
+    // ===== STACK SCROLL: SMOOTH HOVER DECELERATION =====
+    (function () {
+      const section = document.querySelector('.stack-scroll');
+      if (!section) return;
+      let raf;
+      let hovered = false;
+
+      function getAnims() {
+        return Array.from(section.querySelectorAll('.stack-row'))
+          .flatMap(row => row.getAnimations());
+      }
+
+      function ease(targetRate, step) {
+        cancelAnimationFrame(raf);
+        function tick() {
+          const anims = getAnims();
+          let settled = true;
+          anims.forEach(a => {
+            const current = a.playbackRate;
+            const diff = targetRate - current;
+            if (Math.abs(diff) > 0.004) {
+              a.updatePlaybackRate(current + diff * step);
+              settled = false;
+            } else {
+              a.updatePlaybackRate(targetRate);
+            }
+          });
+          if (!settled) raf = requestAnimationFrame(tick);
+        }
+        raf = requestAnimationFrame(tick);
+      }
+
+      section.addEventListener('mouseenter', () => { hovered = true;  ease(0.06, 0.12); });
+      section.addEventListener('mouseleave', () => { hovered = false; ease(1.00, 0.10); });
+    })();
   </script>
 </body>
 </html>
