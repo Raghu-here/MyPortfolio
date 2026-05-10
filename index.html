@@ -463,13 +463,18 @@
     .tech-pill svg { width: 14px; height: 14px; }
     
     .project-footer {
-      display: flex; justify-content: space-between; align-items: center;
-      padding-top: 1.25rem; border-top: 1px solid var(--border);
+      display: flex; justify-content: flex-end; align-items: center;
+      padding-top: 0.5rem;
     }
-    .status-active { display: flex; align-items: center; gap: .5rem; font-size: .85rem; color: #10b981; font-weight: 500; }
-    .status-active::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #10b981; }
-    .project-details { font-size: .85rem; color: var(--text-2); font-weight: 500; transition: color .2s; display: inline-flex; align-items: center; gap: .25rem; }
+    .project-details { 
+      font-size: .85rem; color: var(--text-2); font-weight: 500; 
+      transition: color .2s; display: inline-flex; align-items: center; gap: .35rem; 
+    }
+    .project-details::after {
+      content: '↗'; transition: transform .2s ease;
+    }
     .project-details:hover { color: var(--text-1); }
+    .project-details:hover::after { transform: translate(2px, -2px); }
 
     /* ===== ABOUT ===== */
     #about { background: var(--surface); }
@@ -823,65 +828,44 @@
         </div>
         
         <div class="work-grid">
-          <!-- CARD 1 -->
+          <!-- CARD 1: Barrel Network -->
           <div class="project-card reveal">
-            <div class="project-img-wrapper" style="background: radial-gradient(circle at center, rgb(255, 127, 80) 0%, rgb(139, 44, 44) 100%);">
-              <div class="project-img-inner"></div>
+            <div class="project-img-wrapper" style="background: linear-gradient(135deg, rgba(8, 6, 4, 0.6) 0%, rgba(20, 15, 10, 0.4) 100%);">
+              <div class="project-img-inner" style="background-image: url('assets/barrel-network.png'); background-size: cover; background-position: top center;"></div>
             </div>
             <div class="project-body">
               <div class="project-header">
-                <h3 class="project-title" style="font-family: 'DM Sans', sans-serif;">DaemonDoc</h3>
+                <h3 class="project-title" style="font-family: 'DM Sans', sans-serif;">Barrel Network</h3>
                 <div class="project-links">
-                  <a href="#" aria-label="Live Demo"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></a>
-                  <a href="#" aria-label="GitHub Source"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                  <!-- GitHub Source -->
+                  <a href="https://github.com/Raghu-here/barrel-network-backend" target="_blank" rel="noopener noreferrer" aria-label="GitHub Source"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
                 </div>
               </div>
-              <p class="project-desc">AI-powered platform that automatically generates and keeps GitHub READMEs in sync using webhooks, background workers, and large language models.</p>
+              <p class="project-desc">A Minecraft community built on fair play, exceptional builds, and camaraderie. Dive into SMP survival or prove your mettle in Box PvP.</p>
               
               <div class="project-tech-label">TECHNOLOGIES</div>
               <div class="project-tech">
                 <span class="tech-pill"><span style="color:#61dafb">⚛</span> React</span>
+                <span class="tech-pill"><span style="color:#38bdf8">💨</span> Tailwind</span>
                 <span class="tech-pill"><span style="color:#8cc84b">⬢</span> Node.js</span>
-                <span class="tech-pill"><span style="color:#fff">ex</span> Express</span>
-                <span class="tech-pill"><span style="color:#4db33d">🍃</span> MongoDB</span>
-                <span class="tech-pill"><span style="color:#dc382d">🔴</span> Redis</span>
-                <span class="tech-pill"><span style="color:#d92323">🐂</span> BullMQ</span>
               </div>
               
               <div class="project-footer">
-                <span class="status-active">All Systems Operational</span>
-                <a href="#" class="project-details">View Details ↗</a>
+                <a href="https://github.com/Raghu-here/barrel-network-backend" target="_blank" rel="noopener noreferrer" class="project-details" style="margin-left: auto;">View details on GitHub ↗</a>
               </div>
             </div>
           </div>
 
-          <!-- CARD 2 -->
+          <!-- CARD 2: Coming Soon -->
           <div class="project-card reveal" style="transition-delay: .15s;">
-            <div class="project-img-wrapper" style="background: radial-gradient(circle at center, rgb(255, 140, 100) 0%, rgb(180, 50, 50) 100%);">
-              <div class="project-img-inner"></div>
+            <div class="project-img-wrapper" style="background: linear-gradient(135deg, rgba(8, 6, 4, 0.4) 0%, rgba(20, 15, 10, 0.2) 100%);">
+              <div class="project-img-inner" style="background-image: url('assets/coming-soon.png'); background-size: cover; background-position: top center; border-radius: 6px; box-shadow: 0 10px 40px rgba(0,0,0,0.4);"></div>
             </div>
             <div class="project-body">
               <div class="project-header">
-                <h3 class="project-title" style="font-family: 'DM Sans', sans-serif;">NovaDrive</h3>
-                <div class="project-links">
-                  <a href="#" aria-label="Live Demo"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></a>
-                  <a href="#" aria-label="GitHub Source"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
-                </div>
+                <h3 class="project-title" style="font-family: 'DM Sans', sans-serif;">More Projects <span style="font-weight:300; font-style:italic; color:var(--text-3); font-size:1.1rem; vertical-align:middle; margin-left:0.5rem">— dropping soon</span></h3>
               </div>
-              <p class="project-desc">A next-generation cloud storage platform with chunked uploads, secure file handling, and AI-powered organization with automation and productivity focused</p>
-              
-              <div class="project-tech-label">TECHNOLOGIES</div>
-              <div class="project-tech">
-                <span class="tech-pill"><span style="color:#61dafb">⚛</span> React.js</span>
-                <span class="tech-pill"><span style="color:#8cc84b">⬢</span> Node.js</span>
-                <span class="tech-pill"><span style="color:#4db33d">🍃</span> MongoDB</span>
-                <span class="tech-pill"><span style="color:#f38020">☁</span> Cloudflare R2</span>
-              </div>
-              
-              <div class="project-footer">
-                <span class="status-active">All Systems Operational</span>
-                <a href="#" class="project-details">View Details ↗</a>
-              </div>
+              <p class="project-desc">Currently working on some exciting new tools and applications. They will be revealed here when ready.</p>
             </div>
           </div>
         </div>
