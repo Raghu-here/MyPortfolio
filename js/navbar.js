@@ -1,45 +1,30 @@
-// js/navbar.js
+// Navbar scroll and mobile menu logic
 document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.getElementById('navbar');
-  const btnMenu = document.querySelector('.btn-menu');
-  const body = document.body;
-
-  if (!navbar || !btnMenu) return;
-
-  // Scroll Handler with debouncing
-  let isScrolled = false;
-  const handleScroll = () => {
-    const shouldScroll = window.scrollY > 60;
-    if (shouldScroll !== isScrolled) {
-      isScrolled = shouldScroll;
-      navbar.classList.toggle('scrolled', isScrolled);
-    }
-    
-    // Progress Bar Update
-    const progressBar = document.getElementById('progress-bar');
-    if (progressBar) {
-      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 1;
-      progressBar.style.transform = `scaleX(${scrolled})`;
-    }
-  };
+  let ticking = false;
 
   window.addEventListener('scroll', () => {
-    requestAnimationFrame(handleScroll);
-  }, { passive: true });
-
-  // Mobile Menu Toggle
-  btnMenu.addEventListener('click', () => {
-    const isOpen = body.classList.toggle('menu-open');
-    btnMenu.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        navbar.classList.toggle('scrolled', window.scrollY > 60);
+        ticking = false;
+      });
+      ticking = true;
+    }
   });
 
-  // Close menu on link click
-  document.querySelectorAll('.mobile-link').forEach(link => {
-    link.addEventListener('click', () => {
-      body.classList.remove('menu-open');
-      btnMenu.setAttribute('aria-expanded', 'false');
-    });
-  });
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileLinks = mobileMenu.querySelectorAll('.mobile-link');
+
+  function toggleMenu(open) {
+    menuBtn.classList.toggle('open', open);
+    menuBtn.setAttribute('aria-expanded', open);
+    mobileMenu.classList.toggle('open', open);
+    mobileMenu.setAttribute('aria-hidden', !open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+
+  menuBtn.addEventListener('click', () => toggleMenu(!menuBtn.classList.contains('open')));
+  mobileLinks.forEach(link => link.addEventListener('click', () => toggleMenu(false)));
 });
