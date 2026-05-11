@@ -14,7 +14,7 @@ This project is a modern, responsive portfolio designed to showcase professional
 ## ✨ Features
 
 - **Unified Site Wrapper**: Implemented a robust site-wide wrapper structure to ensure consistent layout constraints and improved responsive behavior across all sections.
-- **Interactive Skills Interface**: A redesigned skills section featuring interactive tech cards with integrated tooltips for enhanced technical detail.
+- **Responsive Skills Grid**: A redesigned skills section featuring a staggered grid layout with interactive hover effects and tech cards for a dynamic presentation of technical expertise.
 - **Interactive Marquee Control**: Infinite scroll rows in the stack section that smoothly decelerate on hover using `updatePlaybackRate` for better readability.
 - **Modular Bento Architecture**: Modern, responsive grid layouts for project showcases, built with a clean and organized visual hierarchy.
 - **Performance-Optimized Reveal Logic**: Decoupled `Intersection Observer` implementation that triggers animations only when elements enter the viewport.
