@@ -17,7 +17,6 @@ This project is a modern, responsive portfolio designed to showcase professional
 - **Redesigned Hero Experience**: A high-impact hero section featuring a new layout and an integrated stats grid for immediate professional context.
 - **Interactive Skills Interface**: A redesigned skills section featuring interactive tech cards with integrated tooltips for enhanced technical detail.
 - **Interactive Marquee Control**: Infinite scroll rows in the stack section that smoothly decelerate on hover using `updatePlaybackRate` for better readability.
-- **Dynamic Contact System**: A fully functional contact form with client-side validation, email regex checking, and automated `mailto` link generation.
 - **Modular Bento Architecture**: Modern, responsive grid layouts for project showcases, built with a clean and organized visual hierarchy.
 - **Performance-Optimized Reveal Logic**: Decoupled `Intersection Observer` implementation that triggers animations only when elements enter the viewport.
 - **Adaptive Navigation**: A smart navbar that responds to scroll depth and includes a fully functional mobile overlay menu with body-scroll locking.
