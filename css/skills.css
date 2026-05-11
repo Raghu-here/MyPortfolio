@@ -60,14 +60,9 @@
 /* Row 2 (Items 6-9) - Staggered offset by 1 unit */
 .tech-card:nth-child(6) { grid-column: 2 / span 2; }
 
-/* Row 3 (Items 10-12) - Staggered offset by 2 units */
+/* Row 3 (Items 10-12) - Staggered offset by 3 units (Corrected for symmetry) */
+/* 5 cards = 10 cols. 3 cards = 6 cols. 10 - 6 = 4 empty units. 2 per side. */
 .tech-card:nth-child(10) { grid-column: 3 / span 2; }
-
-/* Row 4 (Items 13-14) - Staggered offset by 3 units */
-.tech-card:nth-child(13) { grid-column: 4 / span 2; }
-
-/* Row 5 (Item 15) - Staggered offset by 4 units */
-.tech-card:nth-child(15) { grid-column: 5 / span 2; }
 
 @media (max-width: 600px) {
   .tech-card-row {
