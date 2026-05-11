@@ -1,4 +1,4 @@
-#contact { background: var(--surface); padding: 7rem 0; }
+#contact { padding: 7rem 0; }
 .contact-title {
   font-family: 'DM Serif Display', serif;
   font-size: clamp(2.4rem, 6vw, 5rem);

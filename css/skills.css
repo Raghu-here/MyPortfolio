@@ -1,4 +1,4 @@
-#skills { background: var(--void); padding: 7rem 0; }
+#skills { padding: 7rem 0; }
 #skills .section-title {
   font-family: 'DM Serif Display', serif;
   font-size: clamp(2.2rem, 5vw, 4rem);

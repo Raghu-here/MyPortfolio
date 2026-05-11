@@ -3,10 +3,27 @@ html { scroll-behavior: smooth; scrollbar-width: none; -ms-overflow-style: none;
 html::-webkit-scrollbar { display: none; }
 body {
   font-family: 'DM Sans', sans-serif;
-  background: var(--void);
+  background-color: var(--void);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.02) 0,
+    rgba(255, 255, 255, 0.02) 1px,
+    transparent 1px,
+    transparent 10px
+  );
   color: var(--text-1);
   line-height: 1.6;
   overflow-x: hidden;
+}
+
+.site-wrapper {
+  max-width: 780px;
+  margin: 0 auto;
+  background-color: var(--void);
+  border-left: 1px dashed rgba(255, 255, 255, 0.08);
+  border-right: 1px dashed rgba(255, 255, 255, 0.08);
+  min-height: 100vh;
+  position: relative;
 }
 img, svg { display: block; max-width: 100%; }
 a { text-decoration: none; color: inherit; }

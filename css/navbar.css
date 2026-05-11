@@ -1,14 +1,15 @@
 #navbar {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  position: fixed; top: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 780px; z-index: 1000;
   padding: 1.25rem 0;
   transition: background .4s var(--ease), border-color .4s var(--ease), backdrop-filter .4s;
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px dashed transparent;
 }
 
 #navbar.scrolled {
   background: rgba(6,8,11,.82);
   backdrop-filter: blur(18px);
-  border-color: var(--border);
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+
 }
 
 .nav-content {

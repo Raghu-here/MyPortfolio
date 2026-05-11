@@ -1,4 +1,4 @@
-#about { background: var(--surface); padding: 7rem 0; }
+#about { padding: 7rem 0; }
 .about-layout {
   display: grid; grid-template-columns: 1fr; gap: 2.5rem;
   align-items: start;
