@@ -13,6 +13,7 @@ This project is a modern, responsive portfolio designed to showcase professional
 **Target Audience:** Recruiters, collaborators, and developers looking for a high-quality, vanilla JavaScript portfolio template.
 ## ✨ Features
 
+- **Unified Site Wrapper**: Implemented a robust site-wide wrapper structure to ensure consistent layout constraints and improved responsive behavior across all sections.
 - **Redesigned Hero Experience**: A high-impact hero section featuring a new layout and an integrated stats grid for immediate professional context.
 - **Interactive Marquee Control**: Infinite scroll rows in the stack section that smoothly decelerate on hover using `updatePlaybackRate` for better readability.
 - **Dynamic Contact System**: A fully functional contact form with client-side validation, email regex checking, and automated `mailto` link generation.
@@ -30,10 +31,11 @@ This project is a modern, responsive portfolio designed to showcase professional
 
 ## 🏗 Architecture
 
-The project follows a modular structure separating concerns between styling and logic, utilizing a component-based CSS architecture:
+The project follows a modular structure separating concerns between styling and logic, utilizing a component-based CSS architecture with a centralized site wrapper for layout consistency:
 
 text
 ├── css/
+│   ├── base.css          # Core layout foundations and site wrapper structure
 │   ├── hero.css          # Redesigned hero layout and stats grid styles
 │   ├── variables.css     # Centralized design tokens and CSS variables
 │   ├── animations.css    # Keyframe definitions and reveal transitions
@@ -45,16 +47,17 @@ text
 │   ├── hero.js           # Staggered load sequences for the redesigned hero
 │   ├── navbar.js         # Scroll-aware nav and mobile menu logic
 │   └── reveal.js         # Intersection Observer implementation
-└── index.html            # Semantic HTML5 structure
+└── index.html            # Semantic HTML5 structure with site-wide wrapper
 
 
 ### Key Components
 
-1.  **Hero Sequencer (`hero.js`)**: Orchestrates the initial page load animations for the redesigned hero section and stats grid using a delay-based staggered approach.
-2.  **Marquee Controller (`animations.js`)**: Manages the playback rate of CSS animations, allowing for smooth transitions between active and hovered states.
-3.  **Contact Handler (`contact.js`)**: Processes form inputs, validates email formats, and constructs the `mailto` URI for seamless communication.
-4.  **Reveal Engine (`reveal.js`)**: A centralized Intersection Observer that manages the `.reveal` class across the entire application.
-5.  **Modular CSS System**: Utilizes `variables.css` and component-specific stylesheets to maintain a scalable and maintainable design system.
+1.  **Site Wrapper Structure**: A foundational layout container implemented in `base.css` and `index.html` that provides consistent padding, max-widths, and structural integrity across the portfolio.
+2.  **Hero Sequencer (`hero.js`)**: Orchestrates the initial page load animations for the redesigned hero section and stats grid using a delay-based staggered approach.
+3.  **Marquee Controller (`animations.js`)**: Manages the playback rate of CSS animations, allowing for smooth transitions between active and hovered states.
+4.  **Contact Handler (`contact.js`)**: Processes form inputs, validates email formats, and constructs the `mailto` URI for seamless communication.
+5.  **Reveal Engine (`reveal.js`)**: A centralized Intersection Observer that manages the `.reveal` class across the entire application.
+6.  **Modular CSS System**: Utilizes `variables.css` and component-specific stylesheets to maintain a scalable and maintainable design system.
 ## 🚦 Getting Started
 
 ### Prerequisites
