@@ -15,7 +15,7 @@
 .about-heading em { color: var(--teal); font-style: italic; }
 .about-p {
   color: var(--text-2); font-weight: 300; line-height: 1.8;
-  margin-bottom: 1rem;
+  margin-bottom: 1rem; font-size: 1.05rem;
 }
 .about-p strong { color: var(--text-1); font-weight: 500; }
 .about-divider { width: 40px; height: 1px; background: var(--border-strong); margin: 1.75rem 0; }
