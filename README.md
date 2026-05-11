@@ -14,12 +14,10 @@ This project is a modern, responsive portfolio designed to showcase professional
 ## ✨ Features
 
 - **Unified Site Wrapper**: Implemented a robust site-wide wrapper structure to ensure consistent layout constraints and improved responsive behavior across all sections.
-- **Redesigned Hero Experience**: A high-impact hero section featuring a new layout and an integrated stats grid for immediate professional context.
 - **Interactive Skills Interface**: A redesigned skills section featuring interactive tech cards with integrated tooltips for enhanced technical detail.
 - **Interactive Marquee Control**: Infinite scroll rows in the stack section that smoothly decelerate on hover using `updatePlaybackRate` for better readability.
 - **Modular Bento Architecture**: Modern, responsive grid layouts for project showcases, built with a clean and organized visual hierarchy.
 - **Performance-Optimized Reveal Logic**: Decoupled `Intersection Observer` implementation that triggers animations only when elements enter the viewport.
-- **Adaptive Navigation**: A smart navbar that responds to scroll depth and includes a fully functional mobile overlay menu with body-scroll locking.
 - **Custom Cursor System**: A dual-element cursor (dot and ring) with Linear Interpolation (Lerp) for smooth, lag-free tracking.
 - **Minimalist Footer Design**: Replaced the previous footer with a streamlined, minimal layout for a cleaner end-of-page experience.
 - **Refined Resource Loading**: Updated script references to ensure optimal loading sequence and better project structure alignment.
@@ -86,10 +84,9 @@ text
 ## 💻 Usage
 
 ### Customizing Content
--   **Email**: Update the recipient address in `js/contact.js` within the `window.location.href` assignment.
--   **Hero Timing**: Adjust the entry sequence delays by modifying the `delays` array in `js/hero.js`.
--   **Marquee Speed**: Change the deceleration and acceleration factors in `js/animations.js` within the `ease` function parameters.
--   **Projects**: Update project links, descriptions, and image paths (e.g., `assets/barrel-network.png`) directly within the `index.html` file.
+- **Email**: Update the recipient address in `js/contact.js` within the `window.location.href` assignment.
+- **Marquee Speed**: Change the deceleration and acceleration factors in `js/animations.js` within the `ease` function parameters.
+- **Projects**: Update project links, descriptions, and image paths (e.g., `assets/barrel-network.png`) directly within the `index.html` file.
 
 ### Adding Reveal Elements
 To make any new section animate on scroll, simply add the `reveal` class:
