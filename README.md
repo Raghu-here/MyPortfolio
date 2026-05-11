@@ -22,6 +22,8 @@ This project is a modern, responsive portfolio designed to showcase professional
 - **Performance-Optimized Reveal Logic**: Decoupled `Intersection Observer` implementation that triggers animations only when elements enter the viewport.
 - **Adaptive Navigation**: A smart navbar that responds to scroll depth and includes a fully functional mobile overlay menu with body-scroll locking.
 - **Custom Cursor System**: A dual-element cursor (dot and ring) with Linear Interpolation (Lerp) for smooth, lag-free tracking.
+- **Minimalist Footer Design**: Replaced the previous footer with a streamlined, minimal layout for a cleaner end-of-page experience.
+- **Refined Resource Loading**: Updated script references to ensure optimal loading sequence and better project structure alignment.
 - **SEO & Accessibility Enhanced**: Optimized with meta tags, semantic HTML, and a `robots.txt` file for superior search engine visibility.
 ## 🛠 Tech Stack
 
