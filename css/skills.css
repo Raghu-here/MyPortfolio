@@ -31,22 +31,16 @@
 
 .tech-card-row {
   display: grid;
-  /* Fixed 8 columns for 16 icons (8x2) ensures perfect symmetry */
-  grid-template-columns: repeat(8, 52px);
-  gap: 0.85rem;
-  justify-content: start;
-}
-
-@media (max-width: 600px) {
-  .tech-card-row {
-    /* 4 columns for 16 icons (4x4) ensures symmetry on mobile too */
-    grid-template-columns: repeat(4, 52px);
-  }
+  /* 10-unit grid to allow half-card staggering */
+  grid-template-columns: repeat(10, 26px); 
+  gap: 0.85rem 0.5rem;
+  justify-content: center;
 }
 
 .tech-card {
   width: 52px;
   height: 52px;
+  grid-column: span 2; /* Each card takes 2 units */
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 14px;
@@ -59,6 +53,33 @@
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
 }
+
+/* Row 1 (Items 1-5) - Start at col 1 */
+.tech-card:nth-child(1) { grid-column: 1 / span 2; }
+
+/* Row 2 (Items 6-9) - Staggered offset by 1 unit */
+.tech-card:nth-child(6) { grid-column: 2 / span 2; }
+
+/* Row 3 (Items 10-12) - Staggered offset by 2 units */
+.tech-card:nth-child(10) { grid-column: 3 / span 2; }
+
+/* Row 4 (Items 13-14) - Staggered offset by 3 units */
+.tech-card:nth-child(13) { grid-column: 4 / span 2; }
+
+/* Row 5 (Item 15) - Staggered offset by 4 units */
+.tech-card:nth-child(15) { grid-column: 5 / span 2; }
+
+@media (max-width: 600px) {
+  .tech-card-row {
+     /* Simpler grid for mobile to ensure readability */
+    grid-template-columns: repeat(4, 52px);
+    gap: 0.85rem;
+  }
+  .tech-card {
+    grid-column: span 1 !important;
+  }
+}
+
 
 .tech-card img {
   width: 26px;
