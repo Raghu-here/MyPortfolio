@@ -87,6 +87,7 @@ text
 - **Email**: Update the recipient address in `js/contact.js` within the `window.location.href` assignment.
 - **Marquee Speed**: Change the deceleration and acceleration factors in `js/animations.js` within the `ease` function parameters.
 - **Projects**: Update project links, descriptions, and image paths (e.g., `assets/barrel-network.png`) directly within the `index.html` file.
+- **Resume**: Replace `assets/resume.pdf` with your own resume file to update the site's download link.
 
 ### Adding Reveal Elements
 To make any new section animate on scroll, simply add the `reveal` class:
