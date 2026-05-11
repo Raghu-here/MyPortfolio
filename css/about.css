@@ -1,6 +1,6 @@
 #about { background: var(--surface); padding: 7rem 0; }
 .about-layout {
-  display: grid; grid-template-columns: 55% 45%; gap: 4rem;
+  display: grid; grid-template-columns: 1fr; gap: 2.5rem;
   align-items: start;
 }
 .about-intro {

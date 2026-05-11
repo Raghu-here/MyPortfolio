@@ -14,7 +14,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 ul { list-style: none; }
 
 /* UTILITY */
-.container { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 2rem; }
+.container { width: 100%; max-width: 780px; margin: 0 auto; padding: 0 2rem; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
 .serif { font-family: 'DM Serif Display', serif; }
 .section-kicker {
