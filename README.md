@@ -22,6 +22,7 @@ This project is a modern, responsive portfolio designed to showcase professional
 - **Minimalist Footer Design**: Replaced the previous footer with a streamlined, minimal layout for a cleaner end-of-page experience.
 - **Refined Resource Loading**: Updated script references to ensure optimal loading sequence and better project structure alignment.
 - **SEO & Accessibility Enhanced**: Optimized with meta tags, semantic HTML, and a `robots.txt` file for superior search engine visibility.
+- **Integrated Professional Resume**: Direct access to a downloadable PDF resume hosted within the assets directory for seamless professional sharing.
 ## 🛠 Tech Stack
 
 - **Frontend**: Next.js, CSS3 (Custom Properties, Flexbox, Staggered Grid)
