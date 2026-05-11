@@ -29,6 +29,7 @@ This project is a modern, responsive portfolio designed to showcase professional
 - **Scripting**: Vanilla JavaScript (ES6+)
 - **Animations**: CSS Keyframes + `requestAnimationFrame` for high-refresh-rate smoothness
 - **APIs**: Intersection Observer, Clipboard API
+- **Deployment**: Vercel
 ## 🏗 Architecture
 
 The project follows a modular structure separating concerns between styling and logic, utilizing a component-based CSS architecture with a centralized site wrapper for layout consistency:
