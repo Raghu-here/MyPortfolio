@@ -98,14 +98,13 @@ html
 
 ### Code Style
 -   **JS**: ES6 classes for complex components, arrow functions for event listeners.
--   **CSS**: BEM-inspired naming convention for components (e.g., `.hero-title`, `.btn-menu`).
+-   **CSS**: Modular architecture using dedicated stylesheets for specific sections and components (e.g., `base.css`, `work.css`, `about.css`). Follows a BEM-inspired naming convention (e.g., `.hero-title`, `.btn-menu`).
 
 ### Running Tests
 Currently, this project uses manual UI testing. Ensure to check:
 1.  Cursor behavior on touch devices (automatically disabled via `pointer: fine` check).
 2.  Mobile menu toggle on small breakpoints.
 3.  Clipboard functionality across different browsers.
-
 ## 🚀 Deployment
 
 This project is ready for static hosting:
