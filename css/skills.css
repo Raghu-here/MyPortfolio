@@ -48,10 +48,29 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 0.2s ease,
+              border-color 0.2s ease,
+              transform 0.2s ease,
+              box-shadow 0.2s ease;
   cursor: pointer;
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
+}
+
+/* The "forming" border glow fill effect */
+.tech-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(0, 100, 102, 0.25) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
 }
 
 /* Row 1 (Items 1-5) - Start at col 1 */
@@ -81,17 +100,22 @@
   height: 26px;
   pointer-events: none;
   filter: grayscale(1) brightness(0.8) opacity(0.5);
-  transition: all 0.4s ease;
+  transition: transform 0.2s ease, filter 0.4s ease;
   transform: scale(0.9);
 }
 
 /* Unique Bloom Effect */
 .tech-card:hover {
-  border-color: var(--teal);
-  background: rgba(26, 155, 138, 0.08);
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 10px 25px -10px rgba(26, 155, 138, 0.4);
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(0, 100, 102, 0.5);
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 8px 24px rgba(0, 100, 102, 0.2),
+              0 0 0 1px rgba(0, 100, 102, 0.3);
   z-index: 10;
+}
+
+.tech-card:hover::before {
+  opacity: 1;
 }
 
 .tech-card:hover img {
