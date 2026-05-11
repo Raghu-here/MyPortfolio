@@ -1,109 +1,176 @@
 #hero {
-  position: relative; min-height: 100svh;
-  display: flex; flex-direction: column; justify-content: center;
-  padding: 8rem 0 4rem; overflow: hidden;
+  position: relative;
+  min-height: auto;
+  display: flex;
+  justify-content: center;
+  padding: 8rem 0 4rem;
+  overflow: visible;
 }
 
-.hero-blobs {
-  position: absolute; inset: 0; pointer-events: none; z-index: 0;
+.hero-container {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
-.blob {
-  position: absolute; border-radius: 50%; filter: blur(90px);
-  animation: float 12s ease-in-out infinite alternate;
+/* 1. BANNER IMAGE CARD */
+.hero-banner {
+  width: 100%;
+  height: 14rem;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  position: relative;
 }
 
-.blob-a {
-  width: 560px; height: 560px;
-  background: radial-gradient(circle, rgba(26,155,138,.18) 0%, transparent 70%);
-  top: -10%; left: -12%;
-  animation-duration: 14s;
+@media (max-width: 640px) {
+  .hero-banner { height: 11rem; }
 }
 
-.blob-b {
-  width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(124,109,250,.14) 0%, transparent 70%);
-  bottom: -10%; right: -8%;
-  animation-duration: 18s; animation-delay: -6s;
+.banner-bg {
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(to bottom, transparent 40%, var(--void) 110%),
+    linear-gradient(135deg, rgba(26,155,138,0.2) 0%, rgba(124,109,250,0.1) 100%);
+  background-size: cover;
+  position: relative;
 }
 
-.hero-scroll-indicator {
-  position: absolute; left: 2rem; top: 50%; transform: translateY(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: .75rem;
-  opacity: 0; transition: opacity 1s var(--ease) 2.2s;
-}
-.hero-scroll-indicator.visible { opacity: 1; }
-
-.scroll-label {
-  writing-mode: vertical-lr; text-orientation: mixed;
-  font-size: .62rem; letter-spacing: .2em; text-transform: uppercase;
-  color: var(--text-3);
+.banner-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+  pointer-events: none;
 }
 
-.scroll-line {
-  width: 1px; height: 60px; background: var(--text-3);
-  animation: scroll-pulse 2.5s ease-in-out infinite;
+/* 2. OVERLAPPING AVATAR */
+.hero-avatar-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: -2rem;
+  margin-left: 1rem;
+  position: relative;
+  z-index: 10;
 }
 
-.hero-inner { position: relative; z-index: 1; padding-left: 4rem; }
-
-.hero-eyebrow {
-  display: flex; align-items: center; gap: 1rem;
-  font-size: .72rem; font-weight: 500; letter-spacing: .2em;
-  text-transform: uppercase; color: var(--teal);
-  margin-bottom: 1.5rem;
-  opacity: 0; transform: translateY(24px);
-  transition: opacity .7s var(--ease), transform .7s var(--ease);
-}
-.hero-eyebrow.visible { opacity: 1; transform: none; }
-.hero-eyebrow::before {
-  content: ''; width: 32px; height: 1px; background: var(--teal);
-}
-
-.hero-name {
+.hero-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 3px solid #ffb300;
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: 'DM Serif Display', serif;
-  font-size: clamp(3.8rem, 10vw, 9.5rem);
-  line-height: .95; letter-spacing: -.03em;
+  font-size: 1.5rem;
+  color: var(--teal);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  object-fit: cover;
+}
+
+.hero-avatar-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 1.5rem;
+}
+
+.psst-text {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--text-2);
+}
+
+.arrow-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--text-3);
+  transform: rotate(30deg);
+}
+
+/* 3. INTRO TEXT */
+.hero-intro {
+  margin-top: 2rem;
+}
+
+.hero-h1 {
+  font-size: clamp(2.2rem, 5vw, 2.8rem);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  color: var(--text-1);
+}
+
+.scribble-name {
+  position: relative;
+  display: inline-block;
+}
+
+.scribble-svg {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.2rem, 3vw, 1.4rem);
+  color: var(--text-2);
   margin-bottom: 1.5rem;
+  font-weight: 400;
 }
 
-.hero-name .line { display: block; overflow: hidden; }
-.hero-name .line span {
-  display: block;
-  opacity: 0; transform: translateY(100%);
-  transition: opacity .9s var(--ease), transform .9s var(--ease);
+.hero-bio {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-2);
 }
-.hero-name .line span.visible { opacity: 1; transform: none; }
-.hero-name .white { color: var(--text-1); }
-.hero-name .teal-italic { color: var(--teal); font-style: italic; }
 
-.hero-sub {
-  font-size: clamp(1rem, 2vw, 1.2rem); font-weight: 300;
-  color: var(--text-2); max-width: 520px; line-height: 1.65;
-  margin-bottom: 1.75rem;
-  opacity: 0; transform: translateY(20px);
-  transition: opacity .7s var(--ease) .6s, transform .7s var(--ease) .6s;
+/* Tech Chips */
+.tech-chip {
+  border: 1.5px dashed rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.06);
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  vertical-align: middle;
+  color: var(--text-1);
+  margin: 0 2px;
 }
-.hero-sub.visible { opacity: 1; transform: none; }
 
-.hero-divider {
-  width: 48px; height: 2px; background: var(--teal);
-  margin-bottom: 1.75rem;
-  opacity: 0; transform: scaleX(0); transform-origin: left;
-  transition: opacity .5s var(--ease) .75s, transform .6s var(--ease) .75s;
+.tech-chip svg {
+  width: 14px;
+  height: 14px;
 }
-.hero-divider.visible { opacity: 1; transform: none; }
 
+/* 4. CTA BUTTONS */
 .hero-ctas {
-  display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap;
-  opacity: 0; transform: translateY(16px);
-  transition: opacity .7s var(--ease) .9s, transform .7s var(--ease) .9s;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
 }
-.hero-ctas.visible { opacity: 1; transform: none; }
 
 .btn {
   display: inline-flex; align-items: center; gap: .5rem;
-  padding: .85rem 2rem; border-radius: 6px;
+  padding: .75rem 1.75rem;
+  border-radius: 6px;
   font-size: .85rem; font-weight: 500; letter-spacing: .04em;
   transition: transform .2s var(--ease), box-shadow .2s, background .2s, border-color .2s, color .2s;
 }
@@ -120,8 +187,153 @@
 }
 .btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
 
-@media (max-width: 640px) {
-  .hero-inner { padding-left: 0; }
-  .hero-scroll-indicator { display: none; }
+/* 5. SOCIAL ICON ROW */
+.hero-socials {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
 }
 
+.hero-socials a {
+  opacity: 0.55;
+  transition: opacity 0.3s var(--ease), color 0.3s;
+  color: var(--text-1);
+}
+
+.hero-socials a:hover {
+  opacity: 1;
+  color: var(--teal);
+}
+
+.hero-socials svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* 6. STATS GRID */
+.hero-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 640px) {
+  .hero-stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.stat-card {
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 1rem;
+  padding: 1rem;
+  background: rgba(255,255,255,0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: transform 0.3s, background 0.3s;
+}
+.stat-card:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.04);
+}
+
+.stat-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--teal);
+  margin-bottom: 0.25rem;
+}
+
+.stat-card strong {
+  font-size: 1.1rem;
+  font-family: 'DM Serif Display', serif;
+  color: var(--text-1);
+  line-height: 1;
+}
+
+.stat-card span {
+  font-size: 0.75rem;
+  color: var(--text-2);
+}
+
+/* 7. CURRENT FOCUS PILL */
+.hero-focus {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-radius: 1rem;
+  border: 1px solid rgba(255,255,255,0.07);
+  padding: 0.75rem 1.25rem;
+  margin-top: 1.5rem;
+  background: rgba(255,255,255,0.015);
+}
+
+.focus-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pulsing-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #00e676;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,230,118,0.5);
+  animation: pulse-dot 2s infinite ease-in-out alternate;
+}
+
+@keyframes pulse-dot {
+  0% { transform: scale(0.8); opacity: 0.6; }
+  100% { transform: scale(1.2); opacity: 1; text-shadow: 0 0 8px #00e676; }
+}
+
+.focus-label {
+  font-size: 0.8rem;
+  color: var(--text-2);
+}
+
+.focus-left strong {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-1);
+}
+
+.focus-right svg {
+  width: 18px;
+  height: 18px;
+  color: var(--text-3);
+}
+
+/* Reveal overrides */
+#hero .reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Fix intersection observer for hero blocks if we want specific staggering */
+#hero .hero-container > div {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUpIn 0.8s var(--ease) forwards;
+}
+#hero .hero-container .hero-banner { animation-delay: 0.1s; }
+#hero .hero-container .hero-avatar-wrapper { animation-delay: 0.2s; }
+#hero .hero-container .hero-intro { animation-delay: 0.3s; }
+#hero .hero-container .hero-ctas { animation-delay: 0.4s; }
+#hero .hero-container .hero-socials { animation-delay: 0.5s; }
+#hero .hero-container .hero-stats-grid { animation-delay: 0.6s; }
+#hero .hero-container .hero-focus { animation-delay: 0.7s; }
+
+@keyframes fadeUpIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

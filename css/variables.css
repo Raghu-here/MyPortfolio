@@ -25,7 +25,7 @@
   --gradient-hero: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(0,100,102,0.25) 0%, transparent 70%);
   --gradient-glow: radial-gradient(circle at center, rgba(0,100,102,0.15) 0%, transparent 60%);
 
-  --font-display: clamp(3.5rem, 9vw, 9.5rem);
+  --font-display: clamp(2.8rem, 6vw, 5rem);
   --font-title: clamp(2rem, 5vw, 4.5rem);
   --font-subtitle: clamp(1.2rem, 2.5vw, 1.8rem);
   --font-body: clamp(0.95rem, 1.5vw, 1.1rem);
@@ -36,10 +36,10 @@
   --space-sm: 1rem;
   --space-md: 2rem;
   --space-lg: 4rem;
-  --space-xl: 8rem;
+  --space-xl: 5rem;
   --space-2xl: 12rem;
 
-  --section-padding: 8rem 0;
+  --section-padding: 5rem 0;
 }
 
 @media (max-width: 768px) {
