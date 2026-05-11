@@ -24,7 +24,7 @@ This project is a modern, responsive portfolio designed to showcase professional
 - **SEO & Accessibility Enhanced**: Optimized with meta tags, semantic HTML, and a `robots.txt` file for superior search engine visibility.
 ## 🛠 Tech Stack
 
-- **Frontend**: HTML5, CSS3 (Custom Properties, Flexbox, Staggered Grid)
+- **Frontend**: Next.js, CSS3 (Custom Properties, Flexbox, Staggered Grid)
 - **Scripting**: Vanilla JavaScript (ES6+)
 - **Animations**: CSS Keyframes + `requestAnimationFrame` for high-refresh-rate smoothness
 - **APIs**: Intersection Observer, Clipboard API
