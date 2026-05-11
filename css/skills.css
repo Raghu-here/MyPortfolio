@@ -31,10 +31,17 @@
 
 .tech-card-row {
   display: grid;
-  /* Proper grid alignment: 48px icons + 12px gaps = ~10 columns on desktop */
-  grid-template-columns: repeat(auto-fill, 52px);
+  /* Fixed 8 columns for 16 icons (8x2) ensures perfect symmetry */
+  grid-template-columns: repeat(8, 52px);
   gap: 0.85rem;
   justify-content: start;
+}
+
+@media (max-width: 600px) {
+  .tech-card-row {
+    /* 4 columns for 16 icons (4x4) ensures symmetry on mobile too */
+    grid-template-columns: repeat(4, 52px);
+  }
 }
 
 .tech-card {
@@ -42,7 +49,7 @@
   height: 52px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
