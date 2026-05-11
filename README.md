@@ -8,9 +8,9 @@ A high-performance, interactive personal portfolio website featuring fluid anima
 [![Tech: Vanilla JS](https://img.shields.io/badge/Tech-Vanilla%20JS-F7DF1E.svg)](#)
 ## 🚀 Overview
 
-This project is a modern, responsive portfolio designed to showcase professional work and skills with a focus on smooth user experience. Unlike standard static sites, it utilizes advanced DOM manipulation and CSS orchestration to create a premium, application-like feel. The codebase is strictly modular, separating styles and logic for every component to ensure high maintainability and performance.
+This project is a modern, responsive portfolio designed to showcase professional work and skills with a focus on smooth user experience. Unlike standard static sites, it utilizes advanced DOM manipulation and CSS orchestration to create a premium, application-like feel. The codebase is strictly modular, leveraging a component-based architecture that separates styles and logic for every element—from the custom cursor system to the bento-grid skill layouts—to ensure high maintainability and performance.
 
-**Target Audience:** Recruiters, collaborators, and developers looking for a high-quality portfolio template.
+**Target Audience:** Recruiters, collaborators, and developers looking for a high-quality, vanilla JavaScript portfolio template.
 ## ✨ Features
 
 - **Redesigned Hero Experience**: A high-impact hero section featuring a new layout and an integrated stats grid for immediate professional context.
