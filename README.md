@@ -23,6 +23,7 @@ This project is a modern, responsive portfolio designed to showcase professional
 - **Refined Resource Loading**: Updated script references to ensure optimal loading sequence and better project structure alignment.
 - **SEO & Accessibility Enhanced**: Optimized with meta tags, semantic HTML, and a `robots.txt` file for superior search engine visibility.
 - **Integrated Professional Resume**: Direct access to a downloadable PDF resume hosted within the assets directory for seamless professional sharing.
+- **Code Quality Reference**: Includes a dedicated utility script demonstrating common JavaScript pitfalls like unhandled promises and orphaned functions to maintain high development standards.
 ## 🛠 Tech Stack
 
 - **Frontend**: Next.js, CSS3 (Custom Properties, Flexbox, Staggered Grid)
@@ -89,6 +90,9 @@ text
 - **Marquee Speed**: Change the deceleration and acceleration factors in `js/animations.js` within the `ease` function parameters.
 - **Projects**: Update project links, descriptions, and image paths (e.g., `assets/barrel-network.png`) directly within the `index.html` file.
 - **Resume**: Replace `assets/resume.pdf` with your own resume file to update the site's download link.
+
+### Testing & Quality
+- **Code Standards**: Reference `assets/testerror.js` for examples of anti-patterns (e.g., ghost code, unhandled promises) to ensure the codebase remains clean and performant.
 
 ### Adding Reveal Elements
 To make any new section animate on scroll, simply add the `reveal` class:
