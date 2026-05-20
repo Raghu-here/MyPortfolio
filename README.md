@@ -127,7 +127,6 @@ This project is ready for static hosting:
 | Cursor not showing | Ensure your device has a pointing device (mouse). The cursor is disabled on touchscreens to preserve native UX. |
 | Animations not triggering | Check if the `reveal` class is present and that `js/main.js` is loading correctly. |
 | Email copy fails | Ensure you are viewing the site over `HTTPS` or `localhost`, as the Clipboard API requires a secure context. |
-
 ## 🗺 Roadmap
 
 - [ ] Add a Dark/Light mode toggle.
