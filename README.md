@@ -1,145 +1,150 @@
-
 # 🎨 MyPortfolio
 
-A high-performance, interactive personal portfolio website featuring fluid animations, modern UI/UX patterns, and a custom-engineered cursor system. Built with a modular architecture for optimal performance and maintainability.
+A high-performance, interactive personal portfolio built with a modular architecture and vanilla JavaScript. Designed for developers seeking a clean, application-like template with fluid animations and modern UI/UX patterns.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Status: Active](https://img.shields.io/badge/Status-Active-success.svg)](#)
-[![Tech: Vanilla JS](https://img.shields.io/badge/Tech-Vanilla%20JS-F7DF1E.svg)](#)
+
+---
+
 ## 🚀 Overview
 
-This project is a modern, responsive portfolio designed to showcase professional work and skills with a focus on smooth user experience. Unlike standard static sites, it utilizes advanced DOM manipulation and CSS orchestration to create a premium, application-like feel. The codebase is strictly modular, leveraging a component-based architecture that separates styles and logic for every element—from the custom cursor system to the bento-grid skill layouts—to ensure high maintainability and performance.
+This portfolio combines responsive design with advanced DOM manipulation to deliver a premium user experience. Key technical features include:
 
-**Target Audience:** Recruiters, collaborators, and developers looking for a high-quality, vanilla JavaScript portfolio template.
-## ✨ Features
+- Component-based CSS architecture with semantic HTML
+- Custom cursor system using Lerp for smooth tracking
+- Scroll-triggered animations via Intersection Observer
+- Interactive marquee with hover deceleration
+- SEO-optimized structure with accessibility enhancements
 
-- **Unified Site Wrapper**: Implemented a robust site-wide wrapper structure to ensure consistent layout constraints and improved responsive behavior across all sections.
-- **Responsive Skills Grid**: A redesigned skills section featuring a staggered grid layout with interactive hover effects and tech cards for a dynamic presentation of technical expertise.
-- **Interactive Marquee Control**: Infinite scroll rows in the stack section that smoothly decelerate on hover using `updatePlaybackRate` for better readability.
-- **Modular Bento Architecture**: Modern, responsive grid layouts for project showcases, built with a clean and organized visual hierarchy.
-- **Performance-Optimized Reveal Logic**: Decoupled `Intersection Observer` implementation that triggers animations only when elements enter the viewport.
-- **Custom Cursor System**: A dual-element cursor (dot and ring) with Linear Interpolation (Lerp) for smooth, lag-free tracking.
-- **Minimalist Footer Design**: Replaced the previous footer with a streamlined, minimal layout for a cleaner end-of-page experience.
-- **Refined Resource Loading**: Updated script references to ensure optimal loading sequence and better project structure alignment.
-- **SEO & Accessibility Enhanced**: Optimized with meta tags, semantic HTML, and a `robots.txt` file for superior search engine visibility.
-- **Integrated Professional Resume**: Direct access to a downloadable PDF resume hosted within the assets directory for seamless professional sharing.
-- **Code Quality Reference**: Includes a dedicated utility script demonstrating common JavaScript pitfalls like unhandled promises and orphaned functions to maintain high development standards.
+---
+
 ## 🛠 Tech Stack
 
-- **Frontend**: Next.js, CSS3 (Custom Properties, Flexbox, Staggered Grid)
-- **Scripting**: Vanilla JavaScript (ES6+)
-- **Animations**: CSS Keyframes + `requestAnimationFrame` for high-refresh-rate smoothness
+- **Core**: Vanilla JavaScript (ES6+), HTML5, CSS3
+- **Animation**: CSS Keyframes + `requestAnimationFrame`
 - **APIs**: Intersection Observer, Clipboard API
-- **Deployment**: Vercel
-## 🏗 Architecture
+- **Deployment**: Static hosting (GitHub Pages, Vercel/Netlify)
 
-The project follows a modular structure separating concerns between styling and logic, utilizing a component-based CSS architecture with a centralized site wrapper for layout consistency:
+---
 
-text
+## 📁 Project Structure
+
+```
 ├── css/
-│   ├── base.css          # Core layout foundations and site wrapper structure
-│   ├── hero.css          # Redesigned hero layout and stats grid styles
-│   ├── variables.css     # Centralized design tokens and CSS variables
-│   ├── animations.css    # Keyframe definitions and reveal transitions
-│   ├── skills.css        # Bento grid and skill card layouts
-│   └── contact.css       # Form validation and success state styling
+│   ├── base.css          # Layout foundations and site wrapper
+│   ├── hero.css          # Hero section styles
+│   ├── variables.css     # Design tokens and CSS variables
+│   ├── animations.css    # Keyframe definitions
+│   ├── skills.css        # Bento grid layouts
+│   └── contact.css       # Form styling
 ├── js/
-│   ├── animations.js     # Marquee deceleration and playback logic
-│   ├── contact.js        # Form validation and mailto handling
-│   ├── hero.js           # Staggered load sequences for the redesigned hero
-│   ├── navbar.js         # Scroll-aware nav and mobile menu logic
-│   └── reveal.js         # Intersection Observer implementation
-└── index.html            # Semantic HTML5 structure with site-wide wrapper
+│   ├── animations.js     # Marquee playback control
+│   ├── contact.js        # Form validation and mailto
+│   ├── hero.js           # Hero load sequences
+│   ├── navbar.js         # Navigation logic
+│   └── reveal.js         # Scroll reveal system
+└── index.html            # Main HTML structure
+```
 
+---
 
-### Key Components
+## 🧰 Key Components
 
-1.  **Site Wrapper Structure**: A foundational layout container implemented in `base.css` and `index.html` that provides consistent padding, max-widths, and structural integrity across the portfolio.
-2.  **Hero Sequencer (`hero.js`)**: Orchestrates the initial page load animations for the redesigned hero section and stats grid using a delay-based staggered approach.
-3.  **Marquee Controller (`animations.js`)**: Manages the playback rate of CSS animations, allowing for smooth transitions between active and hovered states.
-4.  **Contact Handler (`contact.js`)**: Processes form inputs, validates email formats, and constructs the `mailto` URI for seamless communication.
-5.  **Reveal Engine (`reveal.js`)**: A centralized Intersection Observer that manages the `.reveal` class across the entire application.
-6.  **Modular CSS System**: Utilizes `variables.css` and component-specific stylesheets to maintain a scalable and maintainable design system.
-## 🚦 Getting Started
+1. **Site Wrapper**  
+   Defined in `base.css` and `index.html` for consistent layout constraints.
+
+2. **Hero Sequencer**  
+   `hero.js` manages staggered animations for the hero section using delay-based sequencing.
+
+3. **Marquee Controller**  
+   `animations.js` implements smooth infinite scroll with hover deceleration via `updatePlaybackRate`.
+
+4. **Contact Handler**  
+   `contact.js` validates form inputs and constructs `mailto` URIs.
+
+5. **Reveal Engine**  
+   `reveal.js` uses Intersection Observer to trigger `.reveal` animations on viewport entry.
+
+6. **Modular CSS System**  
+   Component-specific stylesheets with BEM-inspired naming (e.g., `.hero-title`, `.btn-menu`).
+
+---
+
+## 🧪 Getting Started
 
 ### Prerequisites
-
--   Any modern web browser (Chrome, Firefox, Safari, Edge).
--   A local development server (optional, but recommended for optimal performance).
+- Modern browser (Chrome, Firefox, Safari, Edge)
+- Optional: Local development server for optimal performance
 
 ### Installation
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/Raghu-here/MyPortfolio.git
+   ```
+2. Navigate to the directory:
+   ```bash
+   cd MyPortfolio
+   ```
+3. Open `index.html` in your browser or use VS Code Live Server for hot reloading.
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/Raghu-here/MyPortfolio.git
-    ```
+---
 
-2.  **Navigate to the directory:**
-    ```bash
-    cd MyPortfolio
-    ```
+## 🛠 Customization
 
-3.  **Launch the site:**
-    -   Simply open `index.html` in your browser.
-    -   *OR* use VS Code "Live Server" extension for hot-reloading.
+- **Email Address**: Update `js/contact.js` in the `mailto` URI
+- **Marquee Speed**: Modify `ease` function parameters in `js/animations.js`
+- **Projects**: Edit links, descriptions, and image paths in `index.html`
+- **Resume**: Replace `assets/resume.pdf` with your file
 
-## 💻 Usage
+---
 
-### Customizing Content
-- **Email**: Update the recipient address in `js/contact.js` within the `window.location.href` assignment.
-- **Marquee Speed**: Change the deceleration and acceleration factors in `js/animations.js` within the `ease` function parameters.
-- **Projects**: Update project links, descriptions, and image paths (e.g., `assets/barrel-network.png`) directly within the `index.html` file.
-- **Resume**: Replace `assets/resume.pdf` with your own resume file to update the site's download link.
-
-### Testing & Quality
-- **Code Standards**: Reference `assets/testerror.js` for examples of anti-patterns (e.g., ghost code, unhandled promises) to ensure the codebase remains clean and performant.
-
-### Adding Reveal Elements
-To make any new section animate on scroll, simply add the `reveal` class:
-
-html
-<section class="reveal">
-  <!-- Your content here -->
-</section>
-
-## 🔧 Development
+## 🧹 Development
 
 ### Code Style
--   **JS**: ES6 classes for complex components, arrow functions for event listeners.
--   **CSS**: Modular architecture using dedicated stylesheets for specific sections and components (e.g., `base.css`, `work.css`, `about.css`). Follows a BEM-inspired naming convention (e.g., `.hero-title`, `.btn-menu`).
+- **JavaScript**: ES6 classes for complex components, arrow functions for event listeners
+- **CSS**: Modular architecture with dedicated stylesheets and BEM-like naming
 
-### Running Tests
-Currently, this project uses manual UI testing. Ensure to check:
-1.  Cursor behavior on touch devices (automatically disabled via `pointer: fine` check).
-2.  Mobile menu toggle on small breakpoints.
-3.  Clipboard functionality across different browsers.
+### Testing
+- **Manual UI Testing**: Verify cursor behavior on non-touch devices, mobile menu toggles, and clipboard functionality
+- **Code Quality**: Review `assets/testerror.js` for anti-pattern examples (e.g., unhandled promises)
+
+---
+
 ## 🚀 Deployment
 
-This project is ready for static hosting:
+- **GitHub Pages**: Push to `main` branch and enable Pages
+- **Vercel/Netlify**: Connect the repo (no build command required)
+- **SEO Ready**: Includes `robots.txt` and meta tags for search indexing
 
-1.  **GitHub Pages**: Push to `main` branch and enable Pages in settings.
-2.  **Vercel/Netlify**: Connect the repository; no build command required.
-3.  **SEO Ready**: Includes `robots.txt` and meta tags for immediate search engine indexing upon deployment.
+---
+
 ## ❓ Troubleshooting
 
 | Issue | Solution |
 | :--- | :--- |
-| Cursor not showing | Ensure your device has a pointing device (mouse). The cursor is disabled on touchscreens to preserve native UX. |
-| Animations not triggering | Check if the `reveal` class is present and that `js/main.js` is loading correctly. |
-| Email copy fails | Ensure you are viewing the site over `HTTPS` or `localhost`, as the Clipboard API requires a secure context. |
+| Cursor not visible | Requires mouse input; disabled on touchscreens |
+| Animations not triggering | Confirm `reveal` class is applied and `js/main.js` is loaded |
+| Email copy fails | Must be served over HTTPS or localhost for Clipboard API |
+
+---
+
 ## 🗺 Roadmap
 
-- [ ] Add a Dark/Light mode toggle.
-- [ ] Implement a dynamic project filtering system.
-- [ ] Integrate a headless CMS for blog posts.
-- [ ] Add PWA support for offline viewing.
+- [ ] Add Dark/Light mode toggle
+- [ ] Implement project filtering system
+- [ ] Integrate headless CMS for blog posts
+- [ ] Add PWA support for offline access
+
+---
 
 ## 📄 License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the [MIT License](LICENSE).
+
+---
 
 ## 🤝 Credits
 
--   **Developer**: [Raghu](https://github.com/Raghu-here)
--   **Icons**: FontAwesome / Lucide (as applicable)
--   **Inspiration**: Modern minimalist design trends.
+- **Developer**: [Raghu](https://github.com/Raghu-here)  
+- **Icons**: FontAwesome / Lucide  
+- **Inspiration**: Modern minimalist design principles
